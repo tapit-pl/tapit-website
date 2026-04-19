@@ -1,0 +1,177 @@
+'use client'
+
+import { useState } from 'react'
+import { CheckCircle } from 'lucide-react'
+
+const services = [
+  'Reklama PPC (Google, Meta)',
+  'SEO',
+  'Marketing lokalny',
+  'Pozycjonowanie w AI',
+  'Strona internetowa',
+  'Analityka i Consent Mode',
+  'Nie wiem — doradźcie',
+]
+
+interface ContactFormProps {
+  variant?: 'default' | 'audit'
+  showCheckboxes?: boolean
+}
+
+const auditCheckboxes = [
+  'Strona internetowa',
+  'SEO',
+  'Google Ads',
+  'Meta Ads',
+  'Wizytówka Google',
+  'Analityka',
+]
+
+export default function ContactForm({ variant = 'default', showCheckboxes = false }: ContactFormProps) {
+  const [submitted, setSubmitted] = useState(false)
+  const [selected, setSelected] = useState<string[]>([])
+
+  const toggleCheckbox = (item: string) => {
+    setSelected(prev =>
+      prev.includes(item) ? prev.filter(i => i !== item) : [...prev, item]
+    )
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // TODO: wire up to backend / email service
+    setSubmitted(true)
+  }
+
+  if (submitted) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
+        <CheckCircle size={48} className="text-success" />
+        <h3 className="font-heading font-bold text-xl text-[#1c1b19]">Wiadomość wysłana!</h3>
+        <p className="text-[#6b6860] text-sm max-w-xs">
+          Odezwiemy się do Ciebie w ciągu 24 godzin roboczych.
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      {/* Top gradient bar */}
+      <div className="-mt-6 -mx-6 mb-2 h-0.5 rounded-t-3xl bg-gradient-to-r from-accent via-orange-400 to-blue-500" />
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs text-[#6b6860] font-medium">Imię i nazwisko *</label>
+          <input
+            type="text"
+            required
+            placeholder="Jan Kowalski"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+          />
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs text-[#6b6860] font-medium">Nazwa firmy *</label>
+          <input
+            type="text"
+            required
+            placeholder="Kowalski & Spółka"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-1.5">
+        <label className="text-xs text-[#6b6860] font-medium">URL strony internetowej <span className="opacity-50">(opcjonalne)</span></label>
+        <input
+          type="url"
+          placeholder="https://twojastrona.pl"
+          className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+        />
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs text-[#6b6860] font-medium">E-mail *</label>
+          <input
+            type="email"
+            required
+            placeholder="jan@firma.pl"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+          />
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs text-[#6b6860] font-medium">Telefon *</label>
+          <input
+            type="tel"
+            required
+            placeholder="+48 600 000 000"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+          />
+        </div>
+      </div>
+
+      {showCheckboxes ? (
+        <div className="flex flex-col gap-2">
+          <label className="text-xs text-[#6b6860] font-medium">Zakres audytu</label>
+          <div className="grid grid-cols-2 gap-2">
+            {auditCheckboxes.map(item => (
+              <label key={item} className="flex items-center gap-2.5 cursor-pointer group">
+                <div
+                  onClick={() => toggleCheckbox(item)}
+                  className={`w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center transition-colors ${
+                    selected.includes(item)
+                      ? 'bg-accent border-accent'
+                      : 'border-[rgba(0,0,0,0.15)] group-hover:border-accent/50'
+                  }`}
+                >
+                  {selected.includes(item) && (
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                      <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </div>
+                <span className="text-sm text-[#6b6860] group-hover:text-[#1c1b19] transition-colors">{item}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs text-[#6b6860] font-medium">Czego potrzebujesz?</label>
+          <select
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] text-sm focus:outline-none focus:border-accent/50 transition-colors appearance-none"
+          >
+            <option value="" className="bg-white">Wybierz usługę...</option>
+            {services.map(s => (
+              <option key={s} value={s} className="bg-white">{s}</option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {variant === 'default' && (
+        <div className="flex flex-col gap-1.5">
+          <label className="text-xs text-[#6b6860] font-medium">Wiadomość <span className="opacity-50">(opcjonalnie)</span></label>
+          <textarea
+            rows={3}
+            placeholder="Opowiedz nam o swoim projekcie..."
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors resize-none"
+          />
+        </div>
+      )}
+
+      <button
+        type="submit"
+        className="w-full py-3.5 rounded-xl bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-accent/20"
+      >
+        {variant === 'audit' ? 'Wyślij — odezwiemy się w 24h' : 'Wyślij zapytanie'}
+      </button>
+
+      <p className="flex items-center gap-2 text-xs text-success">
+        <CheckCircle size={13} />
+        Gwarantujemy kontakt w ciągu 24h. Bez zobowiązań.
+      </p>
+    </form>
+  )
+}
