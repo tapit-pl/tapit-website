@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Search, Eye, TrendingUp, BarChart3, FileText, Video, CheckCircle } from 'lucide-react'
+import { Search, Eye, BarChart3, FileText, Video } from 'lucide-react'
 import SectionTag from '@/components/SectionTag'
 import ContactForm from '@/components/ContactForm'
 

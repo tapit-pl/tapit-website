@@ -155,7 +155,7 @@ export default function CaseStudyPage({ params }: Props) {
         <blockquote className="relative p-8 rounded-2xl bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.08)] mb-16">
           <Quote size={32} className="text-accent/20 absolute top-6 left-6" />
           <p className="text-[#1c1b19] text-lg leading-relaxed font-medium italic mb-5 pl-2">
-            „{cs.quote}"
+            &bdquo;{cs.quote}&rdquo;
           </p>
           <div className="flex items-center gap-3 border-t border-[rgba(0,0,0,0.07)] pt-4">
             <div className="w-9 h-9 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-sm font-bold font-heading">
