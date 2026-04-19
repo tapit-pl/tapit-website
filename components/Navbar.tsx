@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react'
 
 const services = {
