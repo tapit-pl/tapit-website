@@ -3,8 +3,8 @@
 import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, CheckCircle } from 'lucide-react'
-import ContactForm from '@/components/ContactForm'
 import AuditOfferModal from '@/components/home/AuditOfferModal'
 
 interface Ripple {
@@ -39,6 +39,13 @@ function RippleLayer({ ripples }: { ripples: Ripple[] }) {
   )
 }
 
+const stats = [
+  { metric: '50+', label: 'zadowolonych klientów' },
+  { metric: '4 lata', label: 'doświadczenia' },
+  { metric: '+250%', label: 'średni wzrost ruchu' },
+  { metric: '-40%', label: 'średni spadek CPA' },
+]
+
 export default function Hero() {
   const [ripples, setRipples] = useState<Ripple[]>([])
   const [modalOpen, setModalOpen] = useState(false)
@@ -46,17 +53,10 @@ export default function Hero() {
   const triggerRipple = useCallback((e: React.MouseEvent<HTMLSpanElement>) => {
     const x = e.clientX
     const y = e.clientY
-
-    setRipples(prev => [
-      ...prev,
-      { id: Date.now(), x, y },
-    ])
+    setRipples(prev => [...prev, { id: Date.now(), x, y }])
     setTimeout(() => setRipples(prev => [...prev, { id: Date.now() + 1, x, y }]), 200)
     setTimeout(() => setRipples(prev => [...prev, { id: Date.now() + 2, x, y }]), 420)
-
-    // Otwórz modal po zakończeniu pierwszej fali
     setTimeout(() => setModalOpen(true), 600)
-
     setTimeout(() => setRipples([]), 1800)
   }, [])
 
@@ -65,101 +65,148 @@ export default function Hero() {
       <RippleLayer ripples={ripples} />
       <AuditOfferModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
-      <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden bg-grid">
-        {/* Radial glow */}
+      <section className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden bg-[#0f0e0d]">
+
+        {/* Background texture */}
         <div
           aria-hidden
-          className="pointer-events-none absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.07]"
+          className="pointer-events-none absolute inset-0"
           style={{
-            background: 'radial-gradient(circle, #f53c3c 0%, transparent 70%)',
-            transform: 'translate(20%, -20%)',
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
           }}
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-12 lg:gap-16 items-start">
-            {/* Left column */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+        {/* Accent glow top-right */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-0 right-0 w-[700px] h-[700px] rounded-full opacity-10"
+          style={{
+            background: 'radial-gradient(circle, #f53c3c 0%, transparent 65%)',
+            transform: 'translate(30%, -30%)',
+          }}
+        />
+
+        {/* Accent glow bottom-left */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.06]"
+          style={{
+            background: 'radial-gradient(circle, #f53c3c 0%, transparent 65%)',
+            transform: 'translate(-30%, 30%)',
+          }}
+        />
+
+        {/* Main content */}
+        <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full px-4 sm:px-6 pt-16 pb-12">
+
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-10 md:mb-14"
+          >
+            <Image
+              src="/logo-white.png"
+              alt="Tapit"
+              width={160}
+              height={64}
+              className="h-12 md:h-16 w-auto"
+              priority
+            />
+          </motion.div>
+
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/15 border border-accent/30 mb-6 w-fit"
+          >
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse-dot" />
+            <span className="text-accent text-xs font-heading font-bold uppercase tracking-[2px]">
+              Agencja marketingowa · Kraków
+            </span>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-white max-w-4xl mb-6"
+          >
+            <span
+              onClick={triggerRipple}
+              className="relative inline-block text-accent cursor-pointer select-none group/dotknij"
+              style={{ WebkitTapHighlightColor: 'transparent' }}
             >
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
-                <span className="w-2 h-2 rounded-full bg-success animate-pulse-dot" />
-                <span className="text-accent text-xs font-heading font-bold uppercase tracking-[2px]">
-                  Agencja marketingowa z Krakowa
-                </span>
-              </div>
+              Dotknij
+              <span
+                aria-hidden
+                className="absolute bottom-0 left-0 right-0 h-[3px] rounded-full bg-accent/40 group-hover/dotknij:bg-accent/80 transition-colors duration-200"
+              />
+            </span>
+            {', a zajmiemy się resztą —'}
+            <br className="hidden md:block" />
+            {' więcej klientów, mniej przepalonego budżetu'}
+          </motion.h1>
 
-              {/* Headline */}
-              <h1 className="mb-5">
-                <span
-                  onClick={triggerRipple}
-                  className="relative inline-block text-accent cursor-pointer select-none group/dotknij"
-                  style={{ WebkitTapHighlightColor: 'transparent' }}
-                >
-                  Dotknij
-                  {/* Underline hint */}
-                  <span
-                    aria-hidden
-                    className="absolute bottom-0 left-0 right-0 h-[3px] rounded-full bg-accent/30 group-hover/dotknij:bg-accent/60 transition-colors duration-200"
-                  />
-                </span>
-                {', a zajmiemy się resztą — więcej klientów, mniej przepalonego budżetu'}
-              </h1>
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="text-[#b0ada5] text-base md:text-lg leading-relaxed max-w-[540px] mb-10"
+          >
+            Google Ads, SEO, marketing lokalny i pozycjonowanie w AI. Bez długich umów, bez korporacyjnego dystansu — z konkretnymi wynikami.
+          </motion.p>
 
-              {/* Description */}
-              <p className="text-[#6b6860] text-base md:text-lg leading-relaxed max-w-[520px] mb-8">
-                Pomagamy firmom rosnąć przez Google Ads, SEO, marketing lokalny i pozycjonowanie w AI. Bez długich umów, bez korporacyjnego dystansu — z konkretnymi wynikami.
-              </p>
-
-              {/* CTA buttons */}
-              <div className="flex flex-wrap items-center gap-4 mb-10">
-                <Link
-                  href="/audyt"
-                  className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all duration-200 hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5"
-                >
-                  Zamów darmowy audyt
-                </Link>
-                <Link
-                  href="/uslugi"
-                  className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-[rgba(0,0,0,0.15)] text-[#1c1b19] font-heading font-bold text-sm hover:border-[rgba(0,0,0,0.30)] transition-all duration-200 group"
-                >
-                  Poznaj usługi
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-
-              {/* Trust indicators */}
-              <div className="flex flex-wrap gap-5">
-                {['50+ zadowolonych klientów', '4 lata doświadczenia', 'Bez długich umów'].map(item => (
-                  <div key={item} className="flex items-center gap-1.5 text-sm text-[#6b6860]">
-                    <CheckCircle size={14} className="text-success shrink-0" />
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right column — form card */}
-            <motion.div
-              id="hero-form"
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.08)] rounded-3xl p-6 md:p-8 relative overflow-hidden"
+          {/* CTA buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="flex flex-wrap items-center gap-4"
+          >
+            <Link
+              href="/audyt"
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all duration-200 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-0.5"
             >
-              <h2 className="font-heading font-bold text-xl text-[#1c1b19] mb-1" style={{ fontSize: '1.4rem' }}>
-                Bezpłatna wycena w 24h
-              </h2>
-              <p className="text-[#6b6860] text-sm mb-6">
-                Zostaw kontakt — nasz specjalista odezwie się do Ciebie.
-              </p>
-              <ContactForm />
-            </motion.div>
-          </div>
+              Zamów darmowy audyt
+              <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/uslugi"
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-white font-heading font-bold text-sm hover:border-white/50 hover:bg-white/5 transition-all duration-200 group"
+            >
+              Poznaj usługi
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </div>
+
+        {/* Stats bar at bottom */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="relative border-t border-white/08 bg-white/[0.03]"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.08]">
+              {stats.map((s, i) => (
+                <div key={s.label} className="px-6 py-6 md:py-8">
+                  <p className="font-heading font-bold text-2xl md:text-3xl text-white mb-1">{s.metric}</p>
+                  <p className="text-sm text-[#b0ada5]">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
       </section>
     </>
   )
