@@ -3,7 +3,6 @@ import Hero from '@/components/home/Hero'
 import TrustBar from '@/components/home/TrustBar'
 import Stats from '@/components/home/Stats'
 import Services from '@/components/home/Services'
-import WhyUs from '@/components/home/WhyUs'
 import CaseStudies from '@/components/home/CaseStudies'
 import Testimonials from '@/components/home/Testimonials'
 import Process from '@/components/home/Process'
@@ -23,7 +22,6 @@ export default function HomePage() {
       <TrustBar />
       <Stats />
       <Services />
-      <WhyUs />
       <CaseStudies />
       <Testimonials />
       <Process />

@@ -119,9 +119,6 @@ export default function Services() {
                       {service.badge}
                     </span>
                   )}
-                  <p className="mt-4 text-white/30 text-xs uppercase tracking-widest">
-                    najedź, aby dowiedzieć się więcej
-                  </p>
                 </div>
 
                 {/* BACK */}

@@ -2,33 +2,33 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Clock } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import SectionTag from '@/components/SectionTag'
 
 const cases = [
   {
-    industry: 'E-commerce — branża modowa',
-    metric: '+340%',
-    metricLabel: 'ruchu organicznego',
-    desc: 'Wdrożyliśmy kompleksową strategię SEO: optymalizacja techniczna, content plan i link building. W 6 miesięcy ruch organiczny wzrósł o 340%, a przychody ze sklepu o 180%.',
-    period: '6 miesięcy',
-    href: '/blog',
-  },
-  {
-    industry: 'Stomatologia — klinika Kraków',
-    metric: '-62%',
-    metricLabel: 'kosztu pozyskania pacjenta',
-    desc: 'Przeprojektowaliśmy kampanie Google Ads i zoptymalizowaliśmy wizytówkę Google. Klinika trzykrotnie zwiększyła liczbę zapytań przy niższym budżecie reklamowym.',
-    period: '4 miesiące',
-    href: '/blog',
-  },
-  {
-    industry: 'Usługi budowlane — cała Małopolska',
+    tag: 'Marketing lokalny · Usługi prawne',
     metric: '#1',
-    metricLabel: 'w Google Maps Kraków',
-    desc: 'Od zera do pozycji lidera lokalnego SEO. Zoptymalizowaliśmy wizytówkę, zbudowaliśmy opinie i wdrożyliśmy lokalne słowa kluczowe. Dziś 80% leadów pochodzi z Google.',
-    period: '3 miesiące',
-    href: '/blog',
+    metricLabel: 'pozycja wizytówki Google',
+    title: 'Adwokat widoczny tam, gdzie szukają klienci',
+    desc: 'Kancelaria adwokacka zgłosiła się do nas z problemem zerowej widoczności w lokalnych wynikach Google. Po audycie wizytówki, uzupełnieniu profilu i wdrożeniu strategii lokalnego SEO — kancelaria zajęła pierwszą pozycję na frazy takie jak „adwokat Koszalin". Klienci sami przychodzą.',
+    href: '/realizacje',
+  },
+  {
+    tag: 'Google Ads · Turystyka',
+    metric: '×7',
+    metricLabel: 'zwrot z budżetu reklamowego',
+    title: 'Thousand Miles: każda złotówka wróciła siedmiokrotnie',
+    desc: 'Firma wycieczkowa Thousand Miles chciała zapełniać miejsca na wycieczkach bez polegania wyłącznie na platformach rezerwacyjnych. Wdrożyliśmy kampanie Google Ads precyzyjnie skierowane na osoby szukające konkretnych wycieczek. Efekt: każda złotówka wydana na reklamy zwróciła się siedmiokrotnie.',
+    href: '/realizacje',
+  },
+  {
+    tag: 'Strona WWW · Analityka',
+    metric: '+230%',
+    metricLabel: 'wzrost ruchu organicznego',
+    title: 'Gravier: nowa strona, nowe życie w Google',
+    desc: 'Stara strona Gravier nie mierzyła niczego — brak analityki, brak Consent Mode, brak danych. Po kompleksowej przebudowie strony, wdrożeniu GA4, GTM i Consent Mode v2 ruch organiczny wzrósł o 230%. Firma nareszcie wie, co działa.',
+    href: '/realizacje',
   },
 ]
 
@@ -59,26 +59,24 @@ export default function CaseStudies() {
             className="group bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.07)] rounded-2xl p-7 hover:border-accent/20 hover:-translate-y-1 transition-all duration-300 flex flex-col"
           >
             <span className="inline-block text-xs text-[#6b6860] bg-[rgba(0,0,0,0.06)] px-3 py-1 rounded-full mb-5 font-medium">
-              {c.industry}
+              {c.tag}
             </span>
 
-            <div className="mb-4">
+            <div className="mb-3">
               <span className="font-heading font-extrabold text-5xl text-accent">{c.metric}</span>
               <p className="text-[#6b6860] text-sm mt-1">{c.metricLabel}</p>
             </div>
 
+            <h3 className="font-heading font-bold text-[#1c1b19] text-lg mb-3">{c.title}</h3>
+
             <p className="text-[#6b6860] text-sm leading-relaxed flex-1 mb-5">{c.desc}</p>
 
-            <div className="flex items-center justify-between pt-4 border-t border-[rgba(0,0,0,0.07)]">
-              <div className="flex items-center gap-1.5 text-xs text-[#6b6860]">
-                <Clock size={12} />
-                {c.period}
-              </div>
+            <div className="pt-4 border-t border-[rgba(0,0,0,0.07)]">
               <Link
                 href={c.href}
                 className="flex items-center gap-1.5 text-sm text-accent font-medium group/link"
               >
-                Zobacz szczegóły
+                Zobacz wszystkie realizacje
                 <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
               </Link>
             </div>
