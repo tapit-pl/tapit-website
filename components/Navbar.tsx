@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react'
 
 const services = {
@@ -84,19 +85,15 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-8 h-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <circle cx="7" cy="7" r="2.5" fill="#f53c3c" />
-                <path d="M3.5 10.5a5 5 0 0 1 0-7" stroke="#f53c3c" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
-                <path d="M1 13a9 9 0 0 1 0-12" stroke="#f53c3c" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.4" />
-                <path d="M10.5 10.5a5 5 0 0 0 0-7" stroke="#f53c3c" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
-                <path d="M13 13a9 9 0 0 0 0-12" stroke="#f53c3c" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.4" />
-              </svg>
-            </div>
-            <span className="font-heading font-extrabold text-xl text-[#1c1b19] tracking-tight">
-              Tapit<span className="text-accent">.</span>
-            </span>
+          <Link href="/" className="shrink-0 group">
+            <Image
+              src="/logo.png"
+              alt="Tapit"
+              width={100}
+              height={40}
+              className="h-9 w-auto group-hover:opacity-80 transition-opacity"
+              priority
+            />
           </Link>
 
           {/* Desktop links */}

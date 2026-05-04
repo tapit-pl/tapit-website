@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Linkedin, Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 const serviceLinks = [
@@ -27,17 +28,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo + desc */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-7 h-7 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
-                <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                  <circle cx="7" cy="7" r="2.5" fill="#f53c3c" />
-                  <path d="M3.5 10.5a5 5 0 0 1 0-7" stroke="#f53c3c" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
-                  <path d="M10.5 10.5a5 5 0 0 0 0-7" stroke="#f53c3c" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
-                </svg>
-              </div>
-              <span className="font-heading font-extrabold text-lg text-[#1c1b19]">
-                Tapit<span className="text-accent">.</span>
-              </span>
+            <Link href="/" className="inline-block mb-4 hover:opacity-80 transition-opacity">
+              <Image
+                src="/logo.png"
+                alt="Tapit"
+                width={90}
+                height={36}
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-[#6b6860] text-sm leading-relaxed mb-5">
               Agencja marketingowa z Krakowa. Pomagamy firmom rosnąć przez Google Ads, SEO i marketing lokalny. Bez korporacyjnego dystansu.
