@@ -67,31 +67,29 @@ export default function Hero() {
 
       <section className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden bg-[#0f0e0d]">
 
-        {/* Background texture */}
+        {/* Background photo */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=80')",
+            opacity: 0.35,
+          }}
+        />
+
+        {/* Gradient overlay: dark left → transparent right */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
           style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
-            backgroundSize: '64px 64px',
-          }}
-        />
-
-        {/* Accent glow top-right */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute top-0 right-0 w-[700px] h-[700px] rounded-full opacity-10"
-          style={{
-            background: 'radial-gradient(circle, #f53c3c 0%, transparent 65%)',
-            transform: 'translate(30%, -30%)',
+            background: 'linear-gradient(to right, #0f0e0d 35%, rgba(15,14,13,0.85) 55%, rgba(15,14,13,0.5) 80%, rgba(15,14,13,0.3) 100%)',
           }}
         />
 
         {/* Accent glow bottom-left */}
         <div
           aria-hidden
-          className="pointer-events-none absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.06]"
+          className="pointer-events-none absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.08]"
           style={{
             background: 'radial-gradient(circle, #f53c3c 0%, transparent 65%)',
             transform: 'translate(-30%, 30%)',
