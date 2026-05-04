@@ -98,29 +98,48 @@ export default function Services() {
             <motion.div
               key={service.name}
               variants={item}
-              className="group relative backdrop-blur-md bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.10)] hover:bg-[rgba(255,255,255,0.10)] hover:border-[rgba(255,255,255,0.18)] rounded-2xl p-8 transition-all duration-300 overflow-hidden"
+              className="group h-56"
+              style={{ perspective: '1000px' }}
             >
-              {/* Top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-
-              <h3 className="font-heading font-bold text-2xl text-white mb-3 flex items-center gap-3">
-                {service.name}
-                {'badge' in service && service.badge && (
-                  <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-medium">
-                    {service.badge}
-                  </span>
-                )}
-              </h3>
-
-              <p className="text-white/55 text-base leading-relaxed mb-5">{service.desc}</p>
-
-              <Link
-                href={service.href}
-                className="flex items-center gap-1.5 text-sm text-accent font-medium group/link"
+              {/* Card inner — rotates on hover */}
+              <div
+                className="relative w-full h-full transition-transform duration-700 ease-in-out group-hover:[transform:rotateY(180deg)]"
+                style={{ transformStyle: 'preserve-3d' }}
               >
-                Dowiedz się więcej
-                <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-              </Link>
+                {/* FRONT */}
+                <div
+                  className="absolute inset-0 flex flex-col items-center justify-center p-8 rounded-2xl backdrop-blur-md bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.10)] cursor-default"
+                  style={{ backfaceVisibility: 'hidden' }}
+                >
+                  <h3 className="font-heading font-bold text-2xl md:text-3xl text-white text-center leading-tight">
+                    {service.name}
+                  </h3>
+                  {'badge' in service && service.badge && (
+                    <span className="mt-3 text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-medium">
+                      {service.badge}
+                    </span>
+                  )}
+                  <p className="mt-4 text-white/30 text-xs uppercase tracking-widest">
+                    najedź, aby dowiedzieć się więcej
+                  </p>
+                </div>
+
+                {/* BACK */}
+                <div
+                  className="absolute inset-0 flex flex-col justify-between p-8 rounded-2xl backdrop-blur-md bg-[rgba(245,60,60,0.12)] border border-accent/30"
+                  style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+                >
+                  <p className="text-white/80 text-sm leading-relaxed">{service.desc}</p>
+                  <Link
+                    href={service.href}
+                    className="flex items-center gap-1.5 text-sm text-accent font-medium group/link mt-4"
+                  >
+                    Dowiedz się więcej
+                    <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+
             </motion.div>
           ))}
         </motion.div>
