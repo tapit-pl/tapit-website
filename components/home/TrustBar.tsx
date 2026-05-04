@@ -31,14 +31,14 @@ const clients = [
 
 export default function TrustBar() {
   return (
-    <section className="py-10 border-y border-[rgba(0,0,0,0.07)] overflow-hidden relative">
+    <section className="py-10 bg-[#0f0e0d] overflow-hidden relative">
       {/* Fade edges */}
       <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10"
-        style={{ background: 'linear-gradient(90deg, #fafaf8 0%, transparent 100%)' }} />
+        style={{ background: 'linear-gradient(90deg, #0f0e0d 0%, transparent 100%)' }} />
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10"
-        style={{ background: 'linear-gradient(270deg, #fafaf8 0%, transparent 100%)' }} />
+        style={{ background: 'linear-gradient(270deg, #0f0e0d 0%, transparent 100%)' }} />
 
-      <p className="text-center text-xs uppercase tracking-[3px] text-[#6b6860] font-heading mb-6">
+      <p className="text-center text-xs uppercase tracking-[3px] text-white/30 font-heading mb-6">
         Zaufali nam
       </p>
 
@@ -50,7 +50,7 @@ export default function TrustBar() {
               href={client.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-heading font-bold text-[#6b6860] opacity-60 hover:opacity-100 hover:text-accent transition-all cursor-pointer shrink-0"
+              className="text-sm font-heading font-bold text-white/40 hover:text-accent hover:opacity-100 transition-all cursor-pointer shrink-0"
             >
               {client.name}
             </a>
