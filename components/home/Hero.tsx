@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import AuditOfferModal from '@/components/home/AuditOfferModal'
 
 interface Ripple {
@@ -197,7 +197,7 @@ export default function Hero() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.08]">
-              {stats.map((s, i) => (
+              {stats.map((s) => (
                 <div key={s.label} className="px-6 py-6 md:py-8">
                   <p className="font-heading font-bold text-2xl md:text-3xl text-white mb-1">{s.metric}</p>
                   <p className="text-sm text-[#b0ada5]">{s.label}</p>
