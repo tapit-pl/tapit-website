@@ -2,45 +2,37 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import {
-  Target, TrendingUp, MapPin, Brain, Monitor, BarChart3, ArrowRight
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import SectionTag from '@/components/SectionTag'
 
 const services = [
   {
-    icon: Target,
     name: 'Google Ads & PPC',
     desc: 'Reklamy w Google, Meta, TikTok i LinkedIn. Precyzyjne kampanie, które trafiają do Twoich klientów dokładnie wtedy, gdy szukają Twoich usług.',
     href: '/uslugi/google-ads',
   },
   {
-    icon: TrendingUp,
     name: 'Pozycjonowanie SEO',
     desc: 'Budujemy widoczność Twojej strony w wynikach organicznych Google. Długofalowa strategia, która przynosi ruch bez ciągłego płacenia za kliknięcia.',
     href: '/uslugi/seo',
   },
   {
-    icon: MapPin,
     name: 'Marketing lokalny',
     desc: 'Pozycjonowanie wizytówki Google, żeby klienci z Twojego miasta znajdowali Cię jako pierwszego. Idealne dla biznesów stacjonarnych.',
     href: '/uslugi/marketing-lokalny',
   },
   {
-    icon: Brain,
     name: 'Pozycjonowanie w AI',
     desc: 'Optymalizujemy Twoją obecność pod ChatGPT, Perplexity i inne wyszukiwarki AI. Nowy kanał dotarcia, który większość firm ignoruje.',
     href: '/uslugi/pozycjonowanie-w-ai',
     badge: 'Nowość',
   },
   {
-    icon: Monitor,
     name: 'Strony internetowe',
     desc: 'Projektujemy i budujemy szybkie, nowoczesne strony, które nie tylko dobrze wyglądają, ale przede wszystkim konwertują odwiedzających w klientów.',
     href: '/uslugi/strony-internetowe',
   },
   {
-    icon: BarChart3,
     name: 'Analityka i Consent Mode',
     desc: 'Wdrażamy Google Analytics 4, Google Tag Manager i Consent Mode v2, żebyś podejmował decyzje na danych, nie na przeczuciach.',
     href: '/uslugi/analityka',
@@ -111,11 +103,7 @@ export default function Services() {
               {/* Top accent line */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
 
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-5">
-                <service.icon size={24} className="text-accent" />
-              </div>
-
-              <h3 className="font-heading font-bold text-lg text-white mb-3 flex items-center gap-2">
+              <h3 className="font-heading font-bold text-2xl text-white mb-3 flex items-center gap-3">
                 {service.name}
                 {'badge' in service && service.badge && (
                   <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-medium">
@@ -124,7 +112,7 @@ export default function Services() {
                 )}
               </h3>
 
-              <p className="text-white/50 text-sm leading-relaxed mb-5">{service.desc}</p>
+              <p className="text-white/55 text-base leading-relaxed mb-5">{service.desc}</p>
 
               <Link
                 href={service.href}
