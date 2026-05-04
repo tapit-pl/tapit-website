@@ -111,7 +111,7 @@ export default function Hero() {
               alt="Tapit"
               width={160}
               height={64}
-              className="h-12 md:h-16 w-auto"
+              className="h-20 md:h-28 w-auto"
               priority
             />
           </motion.div>
