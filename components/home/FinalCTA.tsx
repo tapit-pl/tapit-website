@@ -23,14 +23,14 @@ export default function FinalCTA() {
       <div className="absolute inset-0 border-y border-accent/10 pointer-events-none" />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
         <h2 className="mb-4">Gotowy na więcej klientów?</h2>
-        <p className="text-[#6b6860] text-lg mb-10">
+        <p className="text-[#b0ada5] text-lg mb-10">
           Zostaw kontakt, odezwiemy się w ciągu 24 godzin.
         </p>
 
         {submitted ? (
           <div className="flex flex-col items-center gap-3">
             <CheckCircle size={40} className="text-success" />
-            <p className="font-heading font-bold text-xl text-[#1c1b19]">Odezwiemy się wkrótce!</p>
+            <p className="font-heading font-bold text-xl text-[#f8f7f4]">Odezwiemy się wkrótce!</p>
           </div>
         ) : (
           <>
@@ -39,7 +39,7 @@ export default function FinalCTA() {
                 type="email"
                 required
                 placeholder="Twój adres e-mail"
-                className="flex-1 px-5 py-3.5 rounded-full bg-[rgba(0,0,0,0.06)] border border-[rgba(0,0,0,0.08)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+                className="flex-1 px-5 py-3.5 rounded-full bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
               />
               <button
                 type="submit"
@@ -49,7 +49,7 @@ export default function FinalCTA() {
                 <ArrowRight size={14} />
               </button>
             </form>
-            <p className="mt-5 text-[#6b6860] text-sm">
+            <p className="mt-5 text-[#b0ada5] text-sm">
               Lub zadzwoń:{' '}
               <a href="tel:+48694843482" className="text-accent hover:underline">
                 +48 694 843 482

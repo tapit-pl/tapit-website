@@ -26,23 +26,23 @@ export default function ServicesPage() {
           <div className="max-w-2xl mb-14">
             <SectionTag>Usługi</SectionTag>
             <h1 className="mb-5">Co robimy dla Twojego biznesu</h1>
-            <p className="text-[#6b6860] text-lg leading-relaxed">
+            <p className="text-[#b0ada5] text-lg leading-relaxed">
               Od reklam w Google po pozycjonowanie w AI — dobieramy narzędzia do Twojego biznesu, nie odwrotnie. Wszystko pod jednym dachem, jeden opiekun, jedna strategia.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 bg-[rgba(0,0,0,0.05)] rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 bg-[rgba(255,255,255,0.04)] rounded-2xl overflow-hidden">
             {services.map(s => (
               <Link
                 key={s.name}
                 href={s.href}
-                className="group relative bg-[#f0eeec] p-8 hover:bg-[rgba(0,0,0,0.03)] transition-all duration-300 overflow-hidden"
+                className="group relative bg-[#1a1917] p-8 hover:bg-[rgba(255,255,255,0.03)] transition-all duration-300 overflow-hidden"
               >
                 <div className="absolute top-0 left-0 right-0 h-[3px] bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/15 flex items-center justify-center mb-5">
                   <s.icon size={24} className="text-accent" />
                 </div>
-                <h2 className="font-heading font-bold text-lg text-[#1c1b19] mb-3 flex items-center gap-2" style={{ fontSize: '1.1rem' }}>
+                <h2 className="font-heading font-bold text-lg text-[#f8f7f4] mb-3 flex items-center gap-2" style={{ fontSize: '1.1rem' }}>
                   {s.name}
                   {'badge' in s && s.badge && (
                     <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-medium">
@@ -50,7 +50,7 @@ export default function ServicesPage() {
                     </span>
                   )}
                 </h2>
-                <p className="text-[#6b6860] text-sm leading-relaxed mb-5">{s.desc}</p>
+                <p className="text-[#b0ada5] text-sm leading-relaxed mb-5">{s.desc}</p>
                 <span className="flex items-center gap-1.5 text-sm text-accent font-medium group/link">
                   Dowiedz się więcej
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />

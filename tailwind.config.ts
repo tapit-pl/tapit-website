@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#fafaf8',
+        bg: '#0f0e0d',
         accent: {
           DEFAULT: '#f53c3c',
           hover: '#d93232',
           muted: 'rgba(245,60,60,0.1)',
         },
-        'text-primary': '#1c1b19',
-        'text-muted': '#6b6860',
+        'text-primary': '#f8f7f4',
+        'text-muted': '#b0ada5',
         success: '#2ecc71',
-        dark: '#e4e2df',
+        dark: '#2a2926',
       },
       fontFamily: {
         heading: ['var(--font-syne)', 'sans-serif'],

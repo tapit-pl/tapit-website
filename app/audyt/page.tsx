@@ -24,7 +24,7 @@ export default function AuditPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <SectionTag className="justify-center">Darmowy audyt</SectionTag>
           <h1 className="mb-6">Sprawdź, gdzie znika Twój budżet</h1>
-          <p className="text-[#6b6860] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#b0ada5] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
             Nasi specjaliści przeanalizują Twoją stronę, reklamy i widoczność w Google. Dostaniesz raport z konkretnymi rekomendacjami — co poprawić, żeby przestać tracić pieniądze. Bez zobowiązań.
           </p>
         </div>
@@ -32,15 +32,15 @@ export default function AuditPage() {
 
       {/* Calculator */}
       <section className="py-16 max-w-3xl mx-auto px-4 sm:px-6">
-        <div className="bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-2xl p-8 md:p-10">
-          <h2 className="font-heading font-bold text-2xl text-[#1c1b19] mb-2" style={{ fontSize: '1.8rem' }}>
+        <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-8 md:p-10">
+          <h2 className="font-heading font-bold text-2xl text-[#f8f7f4] mb-2" style={{ fontSize: '1.8rem' }}>
             Ile możesz tracić?
           </h2>
-          <p className="text-[#6b6860] text-sm mb-8">Przesuń suwak i sprawdź szacunkowe straty w Twoim budżecie.</p>
+          <p className="text-[#b0ada5] text-sm mb-8">Przesuń suwak i sprawdź szacunkowe straty w Twoim budżecie.</p>
 
           <div className="mb-6">
             <div className="flex items-center justify-between mb-3">
-              <label className="text-sm text-[#6b6860] font-medium">
+              <label className="text-sm text-[#b0ada5] font-medium">
                 Twój miesięczny budżet na marketing
               </label>
               <span className="font-heading font-bold text-accent text-lg">
@@ -56,17 +56,17 @@ export default function AuditPage() {
               onChange={e => setBudget(Number(e.target.value))}
               className="w-full h-2 rounded-full appearance-none cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #f53c3c 0%, #f53c3c ${((budget - 1000) / 49000) * 100}%, rgba(0,0,0,0.08) ${((budget - 1000) / 49000) * 100}%, rgba(0,0,0,0.08) 100%)`,
+                background: `linear-gradient(to right, #f53c3c 0%, #f53c3c ${((budget - 1000) / 49000) * 100}%, rgba(255,255,255,0.08) ${((budget - 1000) / 49000) * 100}%, rgba(255,255,255,0.08) 100%)`,
               }}
             />
-            <div className="flex justify-between text-xs text-[#6b6860] mt-1.5">
+            <div className="flex justify-between text-xs text-[#b0ada5] mt-1.5">
               <span>1 000 zł</span>
               <span>50 000 zł</span>
             </div>
           </div>
 
           <div className="bg-accent/10 border border-accent/20 rounded-xl p-5">
-            <p className="text-[#1c1b19] text-base leading-relaxed">
+            <p className="text-[#f8f7f4] text-base leading-relaxed">
               Statystycznie{' '}
               <strong className="text-accent font-bold">{wastePercent}% budżetu</strong>
               {' '}jest przepalane przez brak optymalizacji, złe targetowanie lub niedziałającą analitykę. Dla Twojego budżetu to{' '}
@@ -87,7 +87,7 @@ export default function AuditPage() {
       </section>
 
       {/* What you get */}
-      <section className="py-16 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(0,0,0,0.07)]">
+      <section className="py-16 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(255,255,255,0.07)]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <SectionTag className="justify-center">Zakres audytu</SectionTag>
@@ -119,14 +119,14 @@ export default function AuditPage() {
             ].map(item => (
               <div
                 key={item.title}
-                className="flex items-start gap-4 bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-xl p-6 hover:border-accent/20 transition-colors"
+                className="flex items-start gap-4 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-xl p-6 hover:border-accent/20 transition-colors"
               >
                 <div className="w-11 h-11 rounded-xl bg-accent/10 border border-accent/15 flex items-center justify-center shrink-0">
                   <item.icon size={20} className="text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-heading font-bold text-base text-[#1c1b19] mb-1.5">{item.title}</h3>
-                  <p className="text-[#6b6860] text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="font-heading font-bold text-base text-[#f8f7f4] mb-1.5">{item.title}</h3>
+                  <p className="text-[#b0ada5] text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -149,29 +149,29 @@ export default function AuditPage() {
           ].map(label => (
             <div
               key={label}
-              className="aspect-video bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-xl flex items-center justify-center p-4"
+              className="aspect-video bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-xl flex items-center justify-center p-4"
             >
-              <p className="text-[#6b6860] text-xs text-center">[Screen: {label}]</p>
+              <p className="text-[#b0ada5] text-xs text-center">[Screen: {label}]</p>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-[#6b6860] text-sm">
+        <p className="text-center text-[#b0ada5] text-sm">
           Każdy audyt jest spersonalizowany — analizujemy Twoją konkretną sytuację, nie wysyłamy generycznych PDF-ów.
         </p>
       </section>
 
       {/* Form */}
       <section id="formularz" className="py-16 max-w-2xl mx-auto px-4 sm:px-6">
-        <div className="bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.07)] rounded-3xl p-8 md:p-10">
-          <h2 className="font-heading font-bold text-2xl text-[#1c1b19] mb-1" style={{ fontSize: '1.8rem' }}>
+        <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.07)] rounded-3xl p-8 md:p-10">
+          <h2 className="font-heading font-bold text-2xl text-[#f8f7f4] mb-1" style={{ fontSize: '1.8rem' }}>
             Zamów darmowy audyt
           </h2>
-          <p className="text-[#6b6860] text-sm mb-6">
+          <p className="text-[#b0ada5] text-sm mb-6">
             Wypełnij formularz — nasz specjalista skontaktuje się z Tobą w ciągu 24h.
           </p>
           <ContactForm variant="audit" showCheckboxes />
-          <p className="mt-4 text-center text-xs text-[#6b6860]">
+          <p className="mt-4 text-center text-xs text-[#b0ada5]">
             Bez zobowiązań. Bez spamu. Twoje dane są bezpieczne.
           </p>
         </div>
@@ -184,7 +184,7 @@ export default function AuditPage() {
             <Video size={20} className="text-accent" />
           </div>
           <div>
-            <p className="text-[#1c1b19] text-base leading-relaxed">
+            <p className="text-[#f8f7f4] text-base leading-relaxed">
               Twój audyt otrzymasz w formie{' '}
               <strong className="text-accent">spersonalizowanego nagrania wideo</strong>{' '}
               — nasz specjalista pokaże Ci palcem, co wymaga poprawy i dlaczego. Żadnych generycznych raportów.

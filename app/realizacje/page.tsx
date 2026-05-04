@@ -37,13 +37,13 @@ export default function RealizacjePage() {
           <h1 className="mb-4">
             Wyniki, które mówią same za siebie
           </h1>
-          <p className="text-[#6b6860] text-lg leading-relaxed">
+          <p className="text-[#b0ada5] text-lg leading-relaxed">
             Konkretne liczby od prawdziwych klientów. Bez retuszu, bez uśredniania — tylko to, co faktycznie osiągnęliśmy razem.
           </p>
         </div>
 
         {/* Stats bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 p-6 rounded-2xl bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.07)]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 p-6 rounded-2xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.07)]">
           {[
             { metric: '50+', label: 'klientów obsłużonych' },
             { metric: '4 lata', label: 'na rynku' },
@@ -52,7 +52,7 @@ export default function RealizacjePage() {
           ].map(s => (
             <div key={s.label} className="text-center">
               <p className="font-heading font-bold text-2xl text-accent">{s.metric}</p>
-              <p className="text-xs text-[#6b6860] mt-0.5">{s.label}</p>
+              <p className="text-xs text-[#b0ada5] mt-0.5">{s.label}</p>
             </div>
           ))}
         </div>
@@ -63,7 +63,7 @@ export default function RealizacjePage() {
             <Link
               key={cs.slug}
               href={`/realizacje/${cs.slug}`}
-              className="group flex flex-col rounded-2xl bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.08)] hover:border-accent/30 hover:bg-[rgba(0,0,0,0.05)] transition-all duration-300 overflow-hidden"
+              className="group flex flex-col rounded-2xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] hover:border-accent/30 hover:bg-[rgba(255,255,255,0.04)] transition-all duration-300 overflow-hidden"
             >
               {/* Top color bar + industry */}
               <div className={`h-1.5 bg-gradient-to-r ${cs.coverColor}`} />
@@ -71,37 +71,37 @@ export default function RealizacjePage() {
               <div className="flex flex-col flex-1 p-6">
                 {/* Industry tag */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-[rgba(0,0,0,0.06)] border border-[rgba(0,0,0,0.09)] text-[#6b6860]">
+                  <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.08)] text-[#b0ada5]">
                     {cs.industryTag}
                   </span>
-                  <div className="flex items-center gap-1 text-xs text-[#6b6860]">
+                  <div className="flex items-center gap-1 text-xs text-[#b0ada5]">
                     <Clock size={11} />
                     {cs.period}
                   </div>
                 </div>
 
                 {/* Client name */}
-                <h2 className="font-heading font-bold text-[#1c1b19] text-xl mb-1 group-hover:text-accent transition-colors">
+                <h2 className="font-heading font-bold text-[#f8f7f4] text-xl mb-1 group-hover:text-accent transition-colors">
                   {cs.client}
                 </h2>
 
                 {/* Location */}
-                <div className="flex items-center gap-1.5 text-xs text-[#6b6860] mb-4">
+                <div className="flex items-center gap-1.5 text-xs text-[#b0ada5] mb-4">
                   <MapPin size={11} />
                   {cs.location}
                 </div>
 
                 {/* Challenge excerpt */}
-                <p className="text-sm text-[#6b6860] leading-relaxed line-clamp-3 mb-5 flex-1">
+                <p className="text-sm text-[#b0ada5] leading-relaxed line-clamp-3 mb-5 flex-1">
                   {cs.challenge}
                 </p>
 
                 {/* Results */}
                 <div className="grid grid-cols-3 gap-2 mb-5">
                   {cs.results.map(r => (
-                    <div key={r.label} className="text-center p-2 rounded-xl bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.06)]">
+                    <div key={r.label} className="text-center p-2 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)]">
                       <p className="font-heading font-bold text-accent text-sm leading-tight">{r.metric}</p>
-                      <p className="text-[10px] text-[#6b6860] mt-0.5 leading-tight">{r.label}</p>
+                      <p className="text-[10px] text-[#b0ada5] mt-0.5 leading-tight">{r.label}</p>
                     </div>
                   ))}
                 </div>
@@ -111,7 +111,7 @@ export default function RealizacjePage() {
                   {cs.services.map(s => (
                     <span
                       key={s}
-                      className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${serviceColors[s] ?? 'bg-[rgba(0,0,0,0.06)] text-[#6b6860] border-[rgba(0,0,0,0.09)]'}`}
+                      className={`text-[10px] font-medium px-2 py-0.5 rounded-full border ${serviceColors[s] ?? 'bg-[rgba(255,255,255,0.06)] text-[#b0ada5] border-[rgba(255,255,255,0.08)]'}`}
                     >
                       {s}
                     </span>
@@ -130,10 +130,10 @@ export default function RealizacjePage() {
 
         {/* Bottom CTA */}
         <div className="mt-20 text-center p-10 rounded-3xl bg-gradient-to-br from-accent/10 to-transparent border border-accent/20">
-          <h2 className="font-heading font-bold text-2xl text-[#1c1b19] mb-3">
+          <h2 className="font-heading font-bold text-2xl text-[#f8f7f4] mb-3">
             Chcesz być następnym case study?
           </h2>
-          <p className="text-[#6b6860] mb-6 max-w-md mx-auto">
+          <p className="text-[#b0ada5] mb-6 max-w-md mx-auto">
             Zamów bezpłatny audyt i sprawdź, jakie wyniki możemy osiągnąć razem.
           </p>
           <Link

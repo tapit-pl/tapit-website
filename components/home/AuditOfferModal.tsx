@@ -38,12 +38,12 @@ export default function AuditOfferModal({ open, onClose }: AuditOfferModalProps)
               {/* Top gradient bar */}
               <div className="h-1 rounded-t-3xl bg-gradient-to-r from-accent via-purple-400 to-accent" />
 
-              <div className="bg-white border border-[rgba(0,0,0,0.07)] rounded-b-3xl shadow-2xl overflow-hidden">
+              <div className="bg-[#1a1917] border border-[rgba(255,255,255,0.07)] rounded-b-3xl shadow-2xl overflow-hidden">
                 {/* Close */}
                 <button
                   onClick={onClose}
                   aria-label="Zamknij"
-                  className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[rgba(0,0,0,0.07)] hover:bg-[rgba(0,0,0,0.08)] flex items-center justify-center text-[#6b6860] hover:text-[#1c1b19] transition-colors"
+                  className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[rgba(255,255,255,0.07)] hover:bg-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#b0ada5] hover:text-[#f8f7f4] transition-colors"
                 >
                   <X size={15} />
                 </button>
@@ -58,34 +58,34 @@ export default function AuditOfferModal({ open, onClose }: AuditOfferModalProps)
                   </div>
 
                   {/* Headline */}
-                  <h2 className="font-heading font-bold text-[#1c1b19] mb-2" style={{ fontSize: '1.65rem', lineHeight: 1.2 }}>
+                  <h2 className="font-heading font-bold text-[#f8f7f4] mb-2" style={{ fontSize: '1.65rem', lineHeight: 1.2 }}>
                     Bezpłatny audyt marketingu
                     <br />
                     <span className="text-accent">+ 10% zniżki</span> na pierwsze zlecenie
                   </h2>
 
-                  <p className="text-[#6b6860] text-sm leading-relaxed mb-6">
-                    Przeanalizujemy Twój marketing od zera — stronę, reklamy i widoczność w Google. Jeśli zdecydujesz się na współpracę po audycie, otrzymasz <strong className="text-[#1c1b19]">10% rabatu na pierwszą fakturę</strong>.
+                  <p className="text-[#b0ada5] text-sm leading-relaxed mb-6">
+                    Przeanalizujemy Twój marketing od zera — stronę, reklamy i widoczność w Google. Jeśli zdecydujesz się na współpracę po audycie, otrzymasz <strong className="text-[#f8f7f4]">10% rabatu na pierwszą fakturę</strong>.
                   </p>
 
                   {/* Warunki */}
-                  <div className="space-y-3 mb-7 p-4 rounded-2xl bg-[rgba(0,0,0,0.04)] border border-[rgba(0,0,0,0.07)]">
+                  <div className="space-y-3 mb-7 p-4 rounded-2xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.07)]">
                     <div className="flex items-start gap-3">
                       <CheckCircle size={15} className="text-success shrink-0 mt-0.5" />
-                      <p className="text-sm text-[#6b6860]">
-                        Audyt jest <strong className="text-[#1c1b19]">jednorazowy i bezpłatny</strong> — bez zobowiązań, bez ukrytych kosztów.
+                      <p className="text-sm text-[#b0ada5]">
+                        Audyt jest <strong className="text-[#f8f7f4]">jednorazowy i bezpłatny</strong> — bez zobowiązań, bez ukrytych kosztów.
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
                       <Gift size={15} className="text-accent shrink-0 mt-0.5" />
-                      <p className="text-sm text-[#6b6860]">
+                      <p className="text-sm text-[#b0ada5]">
                         Zniżka 10% zostanie doliczona do oferty, którą otrzymasz po audycie.
                       </p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <Clock size={15} className="text-[#6b6860] shrink-0 mt-0.5" />
-                      <p className="text-sm text-[#6b6860]">
-                        Oferta ze zniżką ważna przez <strong className="text-[#1c1b19]">7 dni</strong> od dnia otrzymania wyceny po audycie.
+                      <Clock size={15} className="text-[#b0ada5] shrink-0 mt-0.5" />
+                      <p className="text-sm text-[#b0ada5]">
+                        Oferta ze zniżką ważna przez <strong className="text-[#f8f7f4]">7 dni</strong> od dnia otrzymania wyceny po audycie.
                       </p>
                     </div>
                   </div>
@@ -101,13 +101,13 @@ export default function AuditOfferModal({ open, onClose }: AuditOfferModalProps)
                     </Link>
                     <button
                       onClick={onClose}
-                      className="flex-1 py-3.5 rounded-full border border-[rgba(0,0,0,0.10)] text-[#6b6860] hover:text-[#1c1b19] hover:border-[rgba(0,0,0,0.25)] text-sm font-medium transition-all"
+                      className="flex-1 py-3.5 rounded-full border border-[rgba(255,255,255,0.10)] text-[#b0ada5] hover:text-[#f8f7f4] hover:border-[rgba(0,0,0,0.25)] text-sm font-medium transition-all"
                     >
                       Może później
                     </button>
                   </div>
 
-                  <p className="text-center text-xs text-[#6b6860]/60 mt-4">
+                  <p className="text-center text-xs text-[#b0ada5]/60 mt-4">
                     Jeden audyt na firmę. Oferta nie łączy się z innymi promocjami.
                   </p>
                 </div>

@@ -47,8 +47,8 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
         <CheckCircle size={48} className="text-success" />
-        <h3 className="font-heading font-bold text-xl text-[#1c1b19]">Wiadomość wysłana!</h3>
-        <p className="text-[#6b6860] text-sm max-w-xs">
+        <h3 className="font-heading font-bold text-xl text-[#f8f7f4]">Wiadomość wysłana!</h3>
+        <p className="text-[#b0ada5] text-sm max-w-xs">
           Odezwiemy się do Ciebie w ciągu 24 godzin roboczych.
         </p>
       </div>
@@ -62,58 +62,58 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-[#6b6860] font-medium">Imię i nazwisko *</label>
+          <label className="text-xs text-[#b0ada5] font-medium">Imię i nazwisko *</label>
           <input
             type="text"
             required
             placeholder="Jan Kowalski"
-            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-[#6b6860] font-medium">Nazwa firmy *</label>
+          <label className="text-xs text-[#b0ada5] font-medium">Nazwa firmy *</label>
           <input
             type="text"
             required
             placeholder="Kowalski & Spółka"
-            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
           />
         </div>
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label className="text-xs text-[#6b6860] font-medium">URL strony internetowej <span className="opacity-50">(opcjonalne)</span></label>
+        <label className="text-xs text-[#b0ada5] font-medium">URL strony internetowej <span className="opacity-50">(opcjonalne)</span></label>
         <input
           type="url"
           placeholder="https://twojastrona.pl"
-          className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
         />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-[#6b6860] font-medium">E-mail *</label>
+          <label className="text-xs text-[#b0ada5] font-medium">E-mail *</label>
           <input
             type="email"
             required
             placeholder="jan@firma.pl"
-            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-[#6b6860] font-medium">Telefon *</label>
+          <label className="text-xs text-[#b0ada5] font-medium">Telefon *</label>
           <input
             type="tel"
             required
             placeholder="+48 600 000 000"
-            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
           />
         </div>
       </div>
 
       {showCheckboxes ? (
         <div className="flex flex-col gap-2">
-          <label className="text-xs text-[#6b6860] font-medium">Zakres audytu</label>
+          <label className="text-xs text-[#b0ada5] font-medium">Zakres audytu</label>
           <div className="grid grid-cols-2 gap-2">
             {auditCheckboxes.map(item => (
               <label key={item} className="flex items-center gap-2.5 cursor-pointer group">
@@ -122,7 +122,7 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
                   className={`w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center transition-colors ${
                     selected.includes(item)
                       ? 'bg-accent border-accent'
-                      : 'border-[rgba(0,0,0,0.15)] group-hover:border-accent/50'
+                      : 'border-[rgba(255,255,255,0.15)] group-hover:border-accent/50'
                   }`}
                 >
                   {selected.includes(item) && (
@@ -131,20 +131,20 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
                     </svg>
                   )}
                 </div>
-                <span className="text-sm text-[#6b6860] group-hover:text-[#1c1b19] transition-colors">{item}</span>
+                <span className="text-sm text-[#b0ada5] group-hover:text-[#f8f7f4] transition-colors">{item}</span>
               </label>
             ))}
           </div>
         </div>
       ) : (
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-[#6b6860] font-medium">Czego potrzebujesz?</label>
+          <label className="text-xs text-[#b0ada5] font-medium">Czego potrzebujesz?</label>
           <select
-            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] text-sm focus:outline-none focus:border-accent/50 transition-colors appearance-none"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] text-sm focus:outline-none focus:border-accent/50 transition-colors appearance-none"
           >
-            <option value="" className="bg-white">Wybierz usługę...</option>
+            <option value="" className="bg-[#1a1917]">Wybierz usługę...</option>
             {services.map(s => (
-              <option key={s} value={s} className="bg-white">{s}</option>
+              <option key={s} value={s} className="bg-[#1a1917]">{s}</option>
             ))}
           </select>
         </div>
@@ -152,11 +152,11 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
 
       {variant === 'default' && (
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs text-[#6b6860] font-medium">Wiadomość <span className="opacity-50">(opcjonalnie)</span></label>
+          <label className="text-xs text-[#b0ada5] font-medium">Wiadomość <span className="opacity-50">(opcjonalnie)</span></label>
           <textarea
             rows={3}
             placeholder="Opowiedz nam o swoim projekcie..."
-            className="w-full px-4 py-3 rounded-xl bg-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.09)] text-[#1c1b19] placeholder-[#6b6860]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors resize-none"
+            className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors resize-none"
           />
         </div>
       )}

@@ -16,7 +16,7 @@ export default function WizytowkaPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <SectionTag className="justify-center">Narzędzie</SectionTag>
           <h1 className="mb-5">Sprawdź pozycję wizytówki Google</h1>
-          <p className="text-[#6b6860] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#b0ada5] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
             Wpisz nazwę swojej firmy i lokalizację — sprawdź, na której pozycji wyświetlasz się w Google Maps. Bezpłatne, bez rejestracji.
           </p>
         </div>
@@ -24,9 +24,9 @@ export default function WizytowkaPage() {
 
       {/* Tool */}
       <section className="pb-16 max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-2xl overflow-hidden min-h-[500px] p-4">
+        <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-2xl overflow-hidden min-h-[500px] p-4">
           <div id="free-tool" className="min-h-[480px]">
-            <div className="flex items-center justify-center h-48 text-[#6b6860] text-sm">
+            <div className="flex items-center justify-center h-48 text-[#b0ada5] text-sm">
               Ładowanie narzędzia...
             </div>
           </div>
@@ -34,7 +34,7 @@ export default function WizytowkaPage() {
       </section>
 
       {/* Why it matters */}
-      <section className="py-16 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(0,0,0,0.07)]">
+      <section className="py-16 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(255,255,255,0.07)]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <SectionTag className="justify-center">Dlaczego to ważne</SectionTag>
@@ -55,9 +55,9 @@ export default function WizytowkaPage() {
                 desc: 'więcej kliknięć generuje wizytówka na pozycji #1 w porównaniu do pozycji #4 i niżej.',
               },
             ].map((item, i) => (
-              <div key={i} className="bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-2xl p-7 text-center">
+              <div key={i} className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-7 text-center">
                 <span className="font-heading font-extrabold text-5xl text-accent block mb-3">{item.stat}</span>
-                <p className="text-[#6b6860] text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-[#b0ada5] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -67,7 +67,7 @@ export default function WizytowkaPage() {
       {/* CTA to local marketing */}
       <section className="py-16 max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <h2 className="mb-4">Niska pozycja? Możemy to zmienić.</h2>
-        <p className="text-[#6b6860] text-lg mb-8">
+        <p className="text-[#b0ada5] text-lg mb-8">
           Zamów darmowy audyt — przeanalizujemy Twoją wizytówkę i pokażemy, co zrobić, żeby wskoczyć wyżej w Google Maps.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -79,7 +79,7 @@ export default function WizytowkaPage() {
           </a>
           <a
             href="/uslugi/marketing-lokalny"
-            className="px-7 py-3.5 rounded-full border border-[rgba(0,0,0,0.15)] text-[#1c1b19] font-heading font-bold text-sm hover:border-[rgba(0,0,0,0.30)] transition-all"
+            className="px-7 py-3.5 rounded-full border border-[rgba(255,255,255,0.15)] text-[#f8f7f4] font-heading font-bold text-sm hover:border-[rgba(0,0,0,0.30)] transition-all"
           >
             Dowiedz się o marketingu lokalnym →
           </a>

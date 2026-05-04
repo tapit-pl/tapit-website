@@ -32,7 +32,7 @@ export default function BlogPostPage({ params }: Props) {
     return paragraphs.map((block, i) => {
       if (block.startsWith('## ')) {
         return (
-          <h2 key={i} className="font-heading font-bold text-2xl text-[#1c1b19] mt-10 mb-4">
+          <h2 key={i} className="font-heading font-bold text-2xl text-[#f8f7f4] mt-10 mb-4">
             {block.replace('## ', '')}
           </h2>
         )
@@ -40,18 +40,18 @@ export default function BlogPostPage({ params }: Props) {
       if (block.startsWith('**') || block.includes('**')) {
         // Handle inline bold
         const rendered = block.split('**').map((part, j) =>
-          j % 2 === 1 ? <strong key={j} className="text-[#1c1b19] font-semibold">{part}</strong> : part
+          j % 2 === 1 ? <strong key={j} className="text-[#f8f7f4] font-semibold">{part}</strong> : part
         )
-        return <p key={i} className="text-[#6b6860] leading-relaxed mb-4">{rendered}</p>
+        return <p key={i} className="text-[#b0ada5] leading-relaxed mb-4">{rendered}</p>
       }
       if (block.match(/^[0-9]+\./m)) {
         const lines = block.split('\n').filter(Boolean)
         return (
-          <ol key={i} className="list-decimal list-inside space-y-2 mb-4 text-[#6b6860]">
+          <ol key={i} className="list-decimal list-inside space-y-2 mb-4 text-[#b0ada5]">
             {lines.map((line, j) => {
               const text = line.replace(/^[0-9]+\.\s*/, '')
               const parts = text.split('**').map((part, k) =>
-                k % 2 === 1 ? <strong key={k} className="text-[#1c1b19] font-semibold">{part}</strong> : part
+                k % 2 === 1 ? <strong key={k} className="text-[#f8f7f4] font-semibold">{part}</strong> : part
               )
               return <li key={j} className="leading-relaxed">{parts}</li>
             })}
@@ -61,11 +61,11 @@ export default function BlogPostPage({ params }: Props) {
       if (block.startsWith('- ')) {
         const lines = block.split('\n').filter(l => l.startsWith('- '))
         return (
-          <ul key={i} className="space-y-2 mb-4 text-[#6b6860]">
+          <ul key={i} className="space-y-2 mb-4 text-[#b0ada5]">
             {lines.map((line, j) => {
               const text = line.replace(/^-\s*/, '')
               const parts = text.split('**').map((part, k) =>
-                k % 2 === 1 ? <strong key={k} className="text-[#1c1b19] font-semibold">{part}</strong> : part
+                k % 2 === 1 ? <strong key={k} className="text-[#f8f7f4] font-semibold">{part}</strong> : part
               )
               return (
                 <li key={j} className="flex gap-2 leading-relaxed">
@@ -79,9 +79,9 @@ export default function BlogPostPage({ params }: Props) {
       }
       if (block.trim() === '') return null
       const parts = block.split('**').map((part, j) =>
-        j % 2 === 1 ? <strong key={j} className="text-[#1c1b19] font-semibold">{part}</strong> : part
+        j % 2 === 1 ? <strong key={j} className="text-[#f8f7f4] font-semibold">{part}</strong> : part
       )
-      return <p key={i} className="text-[#6b6860] leading-relaxed mb-4">{parts}</p>
+      return <p key={i} className="text-[#b0ada5] leading-relaxed mb-4">{parts}</p>
     })
   }
 
@@ -92,7 +92,7 @@ export default function BlogPostPage({ params }: Props) {
           {/* Back link */}
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-[#6b6860] hover:text-accent transition-colors mb-10"
+            className="inline-flex items-center gap-2 text-sm text-[#b0ada5] hover:text-accent transition-colors mb-10"
           >
             <ArrowLeft size={16} />
             Wróć do bloga
@@ -105,11 +105,11 @@ export default function BlogPostPage({ params }: Props) {
                 <Tag size={10} />
                 {post.category}
               </span>
-              <span className="flex items-center gap-1.5 text-xs text-[#6b6860]">
+              <span className="flex items-center gap-1.5 text-xs text-[#b0ada5]">
                 <Clock size={11} />
                 {post.readTime}
               </span>
-              <time className="text-xs text-[#6b6860]">
+              <time className="text-xs text-[#b0ada5]">
                 {new Date(post.date).toLocaleDateString('pl-PL', {
                   year: 'numeric', month: 'long', day: 'numeric',
                 })}
@@ -117,11 +117,11 @@ export default function BlogPostPage({ params }: Props) {
             </div>
 
             <h1 className="mb-5">{post.title}</h1>
-            <p className="text-[#6b6860] text-lg leading-relaxed">{post.excerpt}</p>
+            <p className="text-[#b0ada5] text-lg leading-relaxed">{post.excerpt}</p>
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-gradient-to-r from-transparent via-[rgba(0,0,0,0.08)] to-transparent mb-10" />
+          <div className="h-px bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.08)] to-transparent mb-10" />
 
           {/* Content */}
           <div className="prose-tapit">
@@ -129,23 +129,23 @@ export default function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Author */}
-          <div className="mt-12 pt-8 border-t border-[rgba(0,0,0,0.08)] flex items-center gap-4">
+          <div className="mt-12 pt-8 border-t border-[rgba(255,255,255,0.08)] flex items-center gap-4">
             <div className="w-12 h-12 rounded-full flex items-center justify-center font-heading font-bold text-white shrink-0"
               style={{ background: 'linear-gradient(135deg, #f53c3c, #f59e0b)' }}>
               MS
             </div>
             <div>
-              <p className="font-medium text-[#1c1b19]">Maciej Sieńko</p>
-              <p className="text-sm text-[#6b6860]">Założyciel Tapit, strateg marketingowy</p>
+              <p className="font-medium text-[#f8f7f4]">Maciej Sieńko</p>
+              <p className="text-sm text-[#b0ada5]">Założyciel Tapit, strateg marketingowy</p>
             </div>
           </div>
         </div>
       </article>
 
       {/* Related posts */}
-      <section className="py-16 border-t border-[rgba(0,0,0,0.07)]">
+      <section className="py-16 border-t border-[rgba(255,255,255,0.07)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="font-heading font-bold text-2xl text-[#1c1b19] mb-8" style={{ fontSize: '1.5rem' }}>
+          <h2 className="font-heading font-bold text-2xl text-[#f8f7f4] mb-8" style={{ fontSize: '1.5rem' }}>
             Inne artykuły
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -156,13 +156,13 @@ export default function BlogPostPage({ params }: Props) {
                 <Link
                   key={related.slug}
                   href={`/blog/${related.slug}`}
-                  className="group bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-xl p-5 hover:border-accent/25 hover:-translate-y-0.5 transition-all duration-300"
+                  className="group bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-xl p-5 hover:border-accent/25 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <span className="text-xs text-accent font-medium">{related.category}</span>
-                  <h3 className="font-heading font-bold text-base text-[#1c1b19] mt-2 mb-2 leading-snug">
+                  <h3 className="font-heading font-bold text-base text-[#f8f7f4] mt-2 mb-2 leading-snug">
                     {related.title}
                   </h3>
-                  <p className="text-xs text-[#6b6860] leading-relaxed">{related.excerpt.slice(0, 90)}…</p>
+                  <p className="text-xs text-[#b0ada5] leading-relaxed">{related.excerpt.slice(0, 90)}…</p>
                 </Link>
               ))}
           </div>

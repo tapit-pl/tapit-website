@@ -23,21 +23,21 @@ const companyLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[rgba(0,0,0,0.07)] mt-20">
+    <footer className="border-t border-[rgba(255,255,255,0.07)] mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo + desc */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4 hover:opacity-80 transition-opacity">
               <Image
-                src="/logo.png"
+                src="/logo-white.png"
                 alt="Tapit"
                 width={90}
                 height={36}
                 className="h-8 w-auto"
               />
             </Link>
-            <p className="text-[#6b6860] text-sm leading-relaxed mb-5">
+            <p className="text-[#b0ada5] text-sm leading-relaxed mb-5">
               Agencja marketingowa z Krakowa. Pomagamy firmom rosnąć przez Google Ads, SEO i marketing lokalny. Bez korporacyjnego dystansu.
             </p>
             <div className="flex items-center gap-3">
@@ -46,7 +46,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-9 h-9 rounded-full border border-[rgba(0,0,0,0.09)] flex items-center justify-center text-[#6b6860] hover:text-accent hover:border-accent/30 transition-colors"
+                className="w-9 h-9 rounded-full border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#b0ada5] hover:text-accent hover:border-accent/30 transition-colors"
               >
                 <Linkedin size={16} />
               </a>
@@ -55,7 +55,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-9 h-9 rounded-full border border-[rgba(0,0,0,0.09)] flex items-center justify-center text-[#6b6860] hover:text-accent hover:border-accent/30 transition-colors"
+                className="w-9 h-9 rounded-full border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#b0ada5] hover:text-accent hover:border-accent/30 transition-colors"
               >
                 <Facebook size={16} />
               </a>
@@ -64,7 +64,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-full border border-[rgba(0,0,0,0.09)] flex items-center justify-center text-[#6b6860] hover:text-accent hover:border-accent/30 transition-colors"
+                className="w-9 h-9 rounded-full border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#b0ada5] hover:text-accent hover:border-accent/30 transition-colors"
               >
                 <Instagram size={16} />
               </a>
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-heading font-bold text-[#1c1b19] text-sm uppercase tracking-widest mb-4">
+            <h4 className="font-heading font-bold text-[#f8f7f4] text-sm uppercase tracking-widest mb-4">
               Usługi
             </h4>
             <ul className="space-y-2.5">
@@ -81,7 +81,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#6b6860] hover:text-[#1c1b19] transition-colors"
+                    className="text-sm text-[#b0ada5] hover:text-[#f8f7f4] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-heading font-bold text-[#1c1b19] text-sm uppercase tracking-widest mb-4">
+            <h4 className="font-heading font-bold text-[#f8f7f4] text-sm uppercase tracking-widest mb-4">
               Firma
             </h4>
             <ul className="space-y-2.5">
@@ -100,7 +100,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#6b6860] hover:text-[#1c1b19] transition-colors"
+                    className="text-sm text-[#b0ada5] hover:text-[#f8f7f4] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -111,14 +111,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-heading font-bold text-[#1c1b19] text-sm uppercase tracking-widest mb-4">
+            <h4 className="font-heading font-bold text-[#f8f7f4] text-sm uppercase tracking-widest mb-4">
               Kontakt
             </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:kontakt@tapit.com.pl"
-                  className="flex items-center gap-2.5 text-sm text-[#6b6860] hover:text-accent transition-colors"
+                  className="flex items-center gap-2.5 text-sm text-[#b0ada5] hover:text-accent transition-colors"
                 >
                   <Mail size={15} className="shrink-0" />
                   kontakt@tapit.com.pl
@@ -127,19 +127,19 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+48694843482"
-                  className="flex items-center gap-2.5 text-sm text-[#6b6860] hover:text-accent transition-colors"
+                  className="flex items-center gap-2.5 text-sm text-[#b0ada5] hover:text-accent transition-colors"
                 >
                   <Phone size={15} className="shrink-0" />
                   +48 694 843 482
                 </a>
               </li>
-              <li className="flex items-start gap-2.5 text-sm text-[#6b6860]">
+              <li className="flex items-start gap-2.5 text-sm text-[#b0ada5]">
                 <MapPin size={15} className="shrink-0 mt-0.5" />
                 <span>Aleja Pokoju 41/6<br />31-564 Kraków</span>
               </li>
             </ul>
-            <div className="mt-5 pt-4 border-t border-[rgba(0,0,0,0.07)]">
-              <p className="text-xs text-[#6b6860] leading-relaxed">
+            <div className="mt-5 pt-4 border-t border-[rgba(255,255,255,0.07)]">
+              <p className="text-xs text-[#b0ada5] leading-relaxed">
                 NIP: 6751680027<br />
                 Maciej Sieńko<br />
                 Firma Marketingowo-Usługowa
@@ -150,12 +150,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-[rgba(0,0,0,0.07)]">
+      <div className="border-t border-[rgba(255,255,255,0.07)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-[#6b6860]">
+          <p className="text-xs text-[#b0ada5]">
             © 2025 Tapit. Wszelkie prawa zastrzeżone.
           </p>
-          <p className="text-xs text-[#6b6860]">
+          <p className="text-xs text-[#b0ada5]">
             Dotknij, a zajmiemy się resztą.
           </p>
         </div>

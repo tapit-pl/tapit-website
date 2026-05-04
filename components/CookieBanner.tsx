@@ -30,15 +30,15 @@ export default function CookieBanner() {
     <>
       {/* Main banner */}
       {!showSettings && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-white border-t border-[rgba(0,0,0,0.09)] shadow-2xl animate-fade-in">
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-white border-t border-[rgba(255,255,255,0.08)] shadow-2xl animate-fade-in">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-4">
-            <p className="text-[#6b6860] text-sm flex-1">
+            <p className="text-[#b0ada5] text-sm flex-1">
               Używamy plików cookies, żeby lepiej rozumieć, jak korzystasz z naszej strony i doskonalić nasze usługi.
             </p>
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={() => setShowSettings(true)}
-                className="text-sm text-[#6b6860] hover:text-[#1c1b19] underline transition-colors"
+                className="text-sm text-[#b0ada5] hover:text-[#f8f7f4] underline transition-colors"
               >
                 Ustawienia
               </button>
@@ -56,49 +56,49 @@ export default function CookieBanner() {
       {/* Settings modal */}
       {showSettings && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-          <div className="bg-white border border-[rgba(0,0,0,0.09)] rounded-2xl p-6 max-w-md w-full shadow-2xl">
+          <div className="bg-[#1a1917] border border-[rgba(255,255,255,0.08)] rounded-2xl p-6 max-w-md w-full shadow-2xl">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-heading font-bold text-lg text-[#1c1b19]">Ustawienia cookies</h3>
-              <button onClick={() => setShowSettings(false)} className="text-[#6b6860] hover:text-[#1c1b19]">
+              <h3 className="font-heading font-bold text-lg text-[#f8f7f4]">Ustawienia cookies</h3>
+              <button onClick={() => setShowSettings(false)} className="text-[#b0ada5] hover:text-[#f8f7f4]">
                 <X size={20} />
               </button>
             </div>
 
             <div className="space-y-4">
               {/* Necessary */}
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-[rgba(0,0,0,0.04)]">
+              <div className="flex items-start gap-3 p-3 rounded-xl bg-[rgba(255,255,255,0.04)]">
                 <div className="w-10 h-6 rounded-full bg-accent/30 flex items-center mt-0.5 shrink-0 cursor-not-allowed" />
                 <div>
-                  <p className="font-medium text-sm text-[#1c1b19]">Niezbędne</p>
-                  <p className="text-xs text-[#6b6860] mt-0.5">Wymagane do działania strony. Zawsze włączone.</p>
+                  <p className="font-medium text-sm text-[#f8f7f4]">Niezbędne</p>
+                  <p className="text-xs text-[#b0ada5] mt-0.5">Wymagane do działania strony. Zawsze włączone.</p>
                 </div>
               </div>
 
               {/* Analytics */}
-              <label className="flex items-start gap-3 p-3 rounded-xl bg-[rgba(0,0,0,0.04)] cursor-pointer">
+              <label className="flex items-start gap-3 p-3 rounded-xl bg-[rgba(255,255,255,0.04)] cursor-pointer">
                 <div
-                  className={`w-10 h-6 rounded-full flex items-center px-0.5 mt-0.5 shrink-0 transition-colors ${prefs.analytics ? 'bg-accent' : 'bg-[rgba(0,0,0,0.08)]'}`}
+                  className={`w-10 h-6 rounded-full flex items-center px-0.5 mt-0.5 shrink-0 transition-colors ${prefs.analytics ? 'bg-accent' : 'bg-[rgba(255,255,255,0.08)]'}`}
                   onClick={() => setPrefs(p => ({ ...p, analytics: !p.analytics }))}
                 >
                   <div className={`w-5 h-5 rounded-full bg-white shadow transition-transform ${prefs.analytics ? 'translate-x-4' : 'translate-x-0'}`} />
                 </div>
                 <div>
-                  <p className="font-medium text-sm text-[#1c1b19]">Analityczne</p>
-                  <p className="text-xs text-[#6b6860] mt-0.5">Pomagają nam rozumieć, jak korzystasz ze strony.</p>
+                  <p className="font-medium text-sm text-[#f8f7f4]">Analityczne</p>
+                  <p className="text-xs text-[#b0ada5] mt-0.5">Pomagają nam rozumieć, jak korzystasz ze strony.</p>
                 </div>
               </label>
 
               {/* Marketing */}
-              <label className="flex items-start gap-3 p-3 rounded-xl bg-[rgba(0,0,0,0.04)] cursor-pointer">
+              <label className="flex items-start gap-3 p-3 rounded-xl bg-[rgba(255,255,255,0.04)] cursor-pointer">
                 <div
-                  className={`w-10 h-6 rounded-full flex items-center px-0.5 mt-0.5 shrink-0 transition-colors ${prefs.marketing ? 'bg-accent' : 'bg-[rgba(0,0,0,0.08)]'}`}
+                  className={`w-10 h-6 rounded-full flex items-center px-0.5 mt-0.5 shrink-0 transition-colors ${prefs.marketing ? 'bg-accent' : 'bg-[rgba(255,255,255,0.08)]'}`}
                   onClick={() => setPrefs(p => ({ ...p, marketing: !p.marketing }))}
                 >
                   <div className={`w-5 h-5 rounded-full bg-white shadow transition-transform ${prefs.marketing ? 'translate-x-4' : 'translate-x-0'}`} />
                 </div>
                 <div>
-                  <p className="font-medium text-sm text-[#1c1b19]">Marketingowe</p>
-                  <p className="text-xs text-[#6b6860] mt-0.5">Używane do personalizacji reklam.</p>
+                  <p className="font-medium text-sm text-[#f8f7f4]">Marketingowe</p>
+                  <p className="text-xs text-[#b0ada5] mt-0.5">Używane do personalizacji reklam.</p>
                 </div>
               </label>
             </div>

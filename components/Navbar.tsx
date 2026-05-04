@@ -198,14 +198,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-30 bg-[#f0eeec] flex flex-col pt-24 pb-8 px-6 overflow-y-auto">
+        <div className="fixed inset-0 z-30 bg-[#1a1917] flex flex-col pt-24 pb-8 px-6 overflow-y-auto">
           <nav className="flex flex-col gap-1">
             {navLinks.map(link => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="py-3 text-xl font-heading font-bold text-[#1c1b19] border-b border-[rgba(0,0,0,0.07)]"
+                className="py-3 text-xl font-heading font-bold text-[#f8f7f4] border-b border-[rgba(255,255,255,0.07)]"
               >
                 {link.label}
               </Link>
@@ -214,7 +214,7 @@ export default function Navbar() {
             {/* Services accordion */}
             <button
               onClick={() => setMobileServicesOpen(o => !o)}
-              className="flex items-center justify-between py-3 text-xl font-heading font-bold text-[#1c1b19] border-b border-[rgba(0,0,0,0.07)]"
+              className="flex items-center justify-between py-3 text-xl font-heading font-bold text-[#f8f7f4] border-b border-[rgba(255,255,255,0.07)]"
             >
               Usługi
               <ChevronDown
@@ -230,7 +230,7 @@ export default function Navbar() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-2 py-2 text-[#6b6860] hover:text-accent transition-colors"
+                    className="flex items-center gap-2 py-2 text-[#b0ada5] hover:text-accent transition-colors"
                   >
                     <ArrowRight size={14} />
                     <span className="flex items-center gap-2">
@@ -249,7 +249,7 @@ export default function Navbar() {
             <Link
               href="/sprawdz-wizytowke"
               onClick={() => setMobileOpen(false)}
-              className="py-3 text-xl font-heading font-bold text-[#1c1b19] border-b border-[rgba(0,0,0,0.07)]"
+              className="py-3 text-xl font-heading font-bold text-[#f8f7f4] border-b border-[rgba(255,255,255,0.07)]"
             >
               Sprawdź wizytówkę
             </Link>

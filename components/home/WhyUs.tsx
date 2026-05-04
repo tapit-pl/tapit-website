@@ -28,7 +28,7 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section className="py-20 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(0,0,0,0.06)]">
+    <section className="py-20 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(255,255,255,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export default function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.07)] rounded-2xl p-10 hover:border-accent/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group relative bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.07)] rounded-2xl p-10 hover:border-accent/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               style={{
                 boxShadow: '0 0 0 0 rgba(245,60,60,0)',
               }}
@@ -63,8 +63,8 @@ export default function WhyUs() {
                 {r.num}
               </span>
 
-              <h3 className="font-heading font-bold text-xl text-[#1c1b19] mb-3">{r.title}</h3>
-              <p className="text-[#6b6860] text-sm leading-relaxed">{r.desc}</p>
+              <h3 className="font-heading font-bold text-xl text-[#f8f7f4] mb-3">{r.title}</h3>
+              <p className="text-[#b0ada5] text-sm leading-relaxed">{r.desc}</p>
             </motion.div>
           ))}
         </div>

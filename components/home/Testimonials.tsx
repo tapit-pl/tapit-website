@@ -48,7 +48,7 @@ export default function Testimonials() {
   }, [go])
 
   return (
-    <section className="py-20 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(0,0,0,0.06)]">
+    <section className="py-20 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(255,255,255,0.06)]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <SectionTag className="justify-center">Opinie</SectionTag>
@@ -73,13 +73,13 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <blockquote className="font-heading font-bold text-2xl md:text-3xl text-[#1c1b19] leading-snug mb-8 max-w-2xl mx-auto">
+              <blockquote className="font-heading font-bold text-2xl md:text-3xl text-[#f8f7f4] leading-snug mb-8 max-w-2xl mx-auto">
                 &ldquo;{testimonials[current].quote}&rdquo;
               </blockquote>
 
               <div>
-                <p className="font-medium text-[#1c1b19]">{testimonials[current].name}</p>
-                <p className="text-sm text-[#6b6860] mt-1">{testimonials[current].company}</p>
+                <p className="font-medium text-[#f8f7f4]">{testimonials[current].name}</p>
+                <p className="text-sm text-[#b0ada5] mt-1">{testimonials[current].company}</p>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -90,7 +90,7 @@ export default function Testimonials() {
           <button
             onClick={() => go(-1)}
             aria-label="Poprzednia opinia"
-            className="w-10 h-10 rounded-full border border-[rgba(0,0,0,0.08)] flex items-center justify-center text-[#6b6860] hover:text-[#1c1b19] hover:border-[rgba(0,0,0,0.25)] transition-colors"
+            className="w-10 h-10 rounded-full border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#b0ada5] hover:text-[#f8f7f4] hover:border-[rgba(0,0,0,0.25)] transition-colors"
           >
             <ChevronLeft size={18} />
           </button>
@@ -102,7 +102,7 @@ export default function Testimonials() {
                 onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i) }}
                 aria-label={`Opinia ${i + 1}`}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === current ? 'w-6 bg-accent' : 'w-1.5 bg-[rgba(0,0,0,0.15)]'
+                  i === current ? 'w-6 bg-accent' : 'w-1.5 bg-[rgba(255,255,255,0.15)]'
                 }`}
               />
             ))}
@@ -111,7 +111,7 @@ export default function Testimonials() {
           <button
             onClick={() => go(1)}
             aria-label="Następna opinia"
-            className="w-10 h-10 rounded-full border border-[rgba(0,0,0,0.08)] flex items-center justify-center text-[#6b6860] hover:text-[#1c1b19] hover:border-[rgba(0,0,0,0.25)] transition-colors"
+            className="w-10 h-10 rounded-full border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#b0ada5] hover:text-[#f8f7f4] hover:border-[rgba(0,0,0,0.25)] transition-colors"
           >
             <ChevronRight size={18} />
           </button>

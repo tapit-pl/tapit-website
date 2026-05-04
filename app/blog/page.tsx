@@ -17,7 +17,7 @@ export default function BlogPage() {
         <div className="mb-14">
           <SectionTag>Blog</SectionTag>
           <h1 className="mb-4">Wiedza, która sprzedaje</h1>
-          <p className="text-[#6b6860] text-lg max-w-xl">
+          <p className="text-[#b0ada5] text-lg max-w-xl">
             Praktyczne porady o marketingu cyfrowym — bez lania wody, z konkretnymi przykładami.
           </p>
         </div>
@@ -27,11 +27,11 @@ export default function BlogPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-2xl overflow-hidden hover:border-accent/25 hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="group bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-2xl overflow-hidden hover:border-accent/25 hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               {/* Thumbnail placeholder */}
-              <div className="aspect-video bg-[rgba(0,0,0,0.04)] border-b border-[rgba(0,0,0,0.07)] flex items-center justify-center">
-                <p className="text-xs text-[#6b6860]">[Miniatura artykułu]</p>
+              <div className="aspect-video bg-[rgba(255,255,255,0.04)] border-b border-[rgba(255,255,255,0.07)] flex items-center justify-center">
+                <p className="text-xs text-[#b0ada5]">[Miniatura artykułu]</p>
               </div>
 
               <div className="p-6 flex flex-col flex-1">
@@ -40,20 +40,20 @@ export default function BlogPage() {
                     <Tag size={10} />
                     {post.category}
                   </span>
-                  <span className="flex items-center gap-1.5 text-xs text-[#6b6860]">
+                  <span className="flex items-center gap-1.5 text-xs text-[#b0ada5]">
                     <Clock size={11} />
                     {post.readTime}
                   </span>
                 </div>
 
-                <h2 className="font-heading font-bold text-lg text-[#1c1b19] leading-snug mb-3" style={{ fontSize: '1.1rem' }}>
+                <h2 className="font-heading font-bold text-lg text-[#f8f7f4] leading-snug mb-3" style={{ fontSize: '1.1rem' }}>
                   {post.title}
                 </h2>
 
-                <p className="text-[#6b6860] text-sm leading-relaxed flex-1 mb-5">{post.excerpt}</p>
+                <p className="text-[#b0ada5] text-sm leading-relaxed flex-1 mb-5">{post.excerpt}</p>
 
-                <div className="flex items-center justify-between pt-4 border-t border-[rgba(0,0,0,0.07)]">
-                  <time className="text-xs text-[#6b6860]">
+                <div className="flex items-center justify-between pt-4 border-t border-[rgba(255,255,255,0.07)]">
+                  <time className="text-xs text-[#b0ada5]">
                     {new Date(post.date).toLocaleDateString('pl-PL', {
                       year: 'numeric',
                       month: 'long',

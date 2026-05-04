@@ -42,18 +42,18 @@ export default function FAQ() {
         <h2>Najczęstsze pytania</h2>
       </div>
 
-      <div className="space-y-0 border-t border-[rgba(0,0,0,0.08)]">
+      <div className="space-y-0 border-t border-[rgba(255,255,255,0.08)]">
         {faqs.map((faq, i) => (
-          <div key={i} className="border-b border-[rgba(0,0,0,0.08)]">
+          <div key={i} className="border-b border-[rgba(255,255,255,0.08)]">
             <button
               onClick={() => setOpen(open === i ? null : i)}
               className="flex items-center justify-between w-full py-5 text-left gap-4 group"
               aria-expanded={open === i}
             >
-              <span className={`font-heading font-bold text-base transition-colors ${open === i ? 'text-accent' : 'text-[#1c1b19] group-hover:text-accent'}`}>
+              <span className={`font-heading font-bold text-base transition-colors ${open === i ? 'text-accent' : 'text-[#f8f7f4] group-hover:text-accent'}`}>
                 {faq.q}
               </span>
-              <span className="shrink-0 w-7 h-7 rounded-full border border-[rgba(0,0,0,0.08)] flex items-center justify-center text-[#6b6860] group-hover:border-accent/40 group-hover:text-accent transition-all">
+              <span className="shrink-0 w-7 h-7 rounded-full border border-[rgba(255,255,255,0.08)] flex items-center justify-center text-[#b0ada5] group-hover:border-accent/40 group-hover:text-accent transition-all">
                 {open === i ? <Minus size={14} /> : <Plus size={14} />}
               </span>
             </button>
@@ -67,7 +67,7 @@ export default function FAQ() {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <p className="pb-5 text-[#6b6860] text-sm leading-relaxed">{faq.a}</p>
+                  <p className="pb-5 text-[#b0ada5] text-sm leading-relaxed">{faq.a}</p>
                 </motion.div>
               )}
             </AnimatePresence>

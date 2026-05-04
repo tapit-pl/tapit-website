@@ -16,20 +16,20 @@ export default function ContactPage() {
         <div className="mb-14">
           <SectionTag>Kontakt</SectionTag>
           <h1 className="mb-4">Porozmawiajmy</h1>
-          <p className="text-[#6b6860] text-lg max-w-xl">
+          <p className="text-[#b0ada5] text-lg max-w-xl">
             Napisz do nas, a odezwiemy się w ciągu 24 godzin w dni robocze.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-10 items-start">
           {/* Form */}
-          <div className="bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.09)] rounded-3xl p-8">
+          <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-3xl p-8">
             <ContactForm variant="default" />
           </div>
 
           {/* Contact info */}
           <div className="space-y-6">
-            <div className="bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-2xl p-7 space-y-5">
+            <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-7 space-y-5">
               <a
                 href="mailto:kontakt@tapit.com.pl"
                 className="flex items-start gap-4 group"
@@ -38,8 +38,8 @@ export default function ContactPage() {
                   <Mail size={18} className="text-accent" />
                 </div>
                 <div>
-                  <p className="text-xs text-[#6b6860] uppercase tracking-wider mb-0.5">E-mail</p>
-                  <p className="text-[#1c1b19] font-medium group-hover:text-accent transition-colors">
+                  <p className="text-xs text-[#b0ada5] uppercase tracking-wider mb-0.5">E-mail</p>
+                  <p className="text-[#f8f7f4] font-medium group-hover:text-accent transition-colors">
                     kontakt@tapit.com.pl
                   </p>
                 </div>
@@ -50,8 +50,8 @@ export default function ContactPage() {
                   <Phone size={18} className="text-accent" />
                 </div>
                 <div>
-                  <p className="text-xs text-[#6b6860] uppercase tracking-wider mb-0.5">Telefon</p>
-                  <p className="text-[#1c1b19] font-medium group-hover:text-accent transition-colors">
+                  <p className="text-xs text-[#b0ada5] uppercase tracking-wider mb-0.5">Telefon</p>
+                  <p className="text-[#f8f7f4] font-medium group-hover:text-accent transition-colors">
                     +48 694 843 482
                   </p>
                 </div>
@@ -62,8 +62,8 @@ export default function ContactPage() {
                   <Clock size={18} className="text-accent" />
                 </div>
                 <div>
-                  <p className="text-xs text-[#6b6860] uppercase tracking-wider mb-0.5">Godziny pracy</p>
-                  <p className="text-[#1c1b19] font-medium">Pon–Pt, 9:00–17:00</p>
+                  <p className="text-xs text-[#b0ada5] uppercase tracking-wider mb-0.5">Godziny pracy</p>
+                  <p className="text-[#f8f7f4] font-medium">Pon–Pt, 9:00–17:00</p>
                 </div>
               </div>
 
@@ -72,17 +72,17 @@ export default function ContactPage() {
                   <MapPin size={18} className="text-accent" />
                 </div>
                 <div>
-                  <p className="text-xs text-[#6b6860] uppercase tracking-wider mb-0.5">Adres</p>
-                  <p className="text-[#1c1b19] font-medium">Aleja Pokoju 41/6</p>
-                  <p className="text-[#6b6860] text-sm">31-564 Kraków</p>
+                  <p className="text-xs text-[#b0ada5] uppercase tracking-wider mb-0.5">Adres</p>
+                  <p className="text-[#f8f7f4] font-medium">Aleja Pokoju 41/6</p>
+                  <p className="text-[#b0ada5] text-sm">31-564 Kraków</p>
                 </div>
               </div>
             </div>
 
             {/* Company info */}
-            <div className="bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-2xl p-6">
-              <p className="text-xs text-[#6b6860] uppercase tracking-wider mb-3">Dane firmy</p>
-              <p className="text-sm text-[#6b6860] leading-relaxed">
+            <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-2xl p-6">
+              <p className="text-xs text-[#b0ada5] uppercase tracking-wider mb-3">Dane firmy</p>
+              <p className="text-sm text-[#b0ada5] leading-relaxed">
                 Maciej Sieńko<br />
                 Firma Marketingowo-Usługowa<br />
                 NIP: 6751680027
@@ -90,7 +90,7 @@ export default function ContactPage() {
             </div>
 
             {/* Map placeholder */}
-            <div className="aspect-video rounded-2xl bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] overflow-hidden">
+            <div className="aspect-video rounded-2xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] overflow-hidden">
               <iframe
                 src="https://maps.app.goo.gl/aLfYwoSM6g1KdqiP8"
                 width="100%"

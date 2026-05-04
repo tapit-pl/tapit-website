@@ -47,16 +47,16 @@ function Counter({ value, suffix, prefix }: { value: number; suffix: string; pre
 export default function Stats() {
   return (
     <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-0.5 bg-[rgba(0,0,0,0.05)] rounded-2xl overflow-hidden">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-0.5 bg-[rgba(255,255,255,0.04)] rounded-2xl overflow-hidden">
         {stats.map((stat, i) => (
           <div
             key={i}
-            className="bg-[#f0eeec] px-8 py-10 flex flex-col items-center text-center group hover:bg-[rgba(0,0,0,0.03)] transition-colors"
+            className="bg-[#1a1917] px-8 py-10 flex flex-col items-center text-center group hover:bg-[rgba(255,255,255,0.03)] transition-colors"
           >
             <span className="font-heading font-extrabold text-4xl md:text-5xl text-accent mb-2 tabular-nums">
               <Counter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} />
             </span>
-            <span className="text-sm text-[#6b6860] leading-snug">{stat.label}</span>
+            <span className="text-sm text-[#b0ada5] leading-snug">{stat.label}</span>
           </div>
         ))}
       </div>

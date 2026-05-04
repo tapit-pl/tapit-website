@@ -43,7 +43,7 @@ export default function CaseStudies() {
       >
         <SectionTag className="justify-center">Wyniki</SectionTag>
         <h2 className="mb-4">Co osiągnęliśmy dla klientów</h2>
-        <p className="text-[#6b6860] text-lg max-w-lg mx-auto">
+        <p className="text-[#b0ada5] text-lg max-w-lg mx-auto">
           Liczby zamiast obietnic. Poniżej kilka wybranych historii.
         </p>
       </motion.div>
@@ -56,22 +56,22 @@ export default function CaseStudies() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="group bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.07)] rounded-2xl p-7 hover:border-accent/20 hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            className="group bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.07)] rounded-2xl p-7 hover:border-accent/20 hover:-translate-y-1 transition-all duration-300 flex flex-col"
           >
-            <span className="inline-block text-xs text-[#6b6860] bg-[rgba(0,0,0,0.06)] px-3 py-1 rounded-full mb-5 font-medium">
+            <span className="inline-block text-xs text-[#b0ada5] bg-[rgba(255,255,255,0.06)] px-3 py-1 rounded-full mb-5 font-medium">
               {c.tag}
             </span>
 
             <div className="mb-3">
               <span className="font-heading font-extrabold text-5xl text-accent">{c.metric}</span>
-              <p className="text-[#6b6860] text-sm mt-1">{c.metricLabel}</p>
+              <p className="text-[#b0ada5] text-sm mt-1">{c.metricLabel}</p>
             </div>
 
-            <h3 className="font-heading font-bold text-[#1c1b19] text-lg mb-3">{c.title}</h3>
+            <h3 className="font-heading font-bold text-[#f8f7f4] text-lg mb-3">{c.title}</h3>
 
-            <p className="text-[#6b6860] text-sm leading-relaxed flex-1 mb-5">{c.desc}</p>
+            <p className="text-[#b0ada5] text-sm leading-relaxed flex-1 mb-5">{c.desc}</p>
 
-            <div className="pt-4 border-t border-[rgba(0,0,0,0.07)]">
+            <div className="pt-4 border-t border-[rgba(255,255,255,0.07)]">
               <Link
                 href={c.href}
                 className="flex items-center gap-1.5 text-sm text-accent font-medium group/link"
