@@ -67,7 +67,7 @@ export default function Services() {
         className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80')",
-          opacity: 0.2,
+          opacity: 0.45,
         }}
       />
 
