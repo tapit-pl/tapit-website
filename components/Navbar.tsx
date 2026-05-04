@@ -80,32 +80,19 @@ export default function Navbar() {
       <div
         className={`sticky top-0 z-50 transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}
       >
-      {/* Top bar */}
-      <a
-        href="/audyt"
-        className="block w-full bg-accent hover:bg-accent-hover transition-colors py-2 px-4 text-center relative"
-      >
-        <span className="hidden md:inline text-white text-sm font-medium">
-          Darmowy audyt Twojego marketingu — sprawdź, ile tracisz →
-        </span>
-        <span className="md:hidden text-white text-sm font-medium">
-          Darmowy audyt → kliknij
-        </span>
-      </a>
-
       {/* Main nav */}
       <header
         className={`transition-all duration-300 ${
           scrolled
-            ? 'bg-[rgba(250,250,248,0.97)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.08)] py-3 shadow-sm'
-            : 'bg-[rgba(250,250,248,0.90)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.05)] py-4'
+            ? 'bg-[rgba(15,14,13,0.98)] backdrop-blur-xl border-b border-[rgba(255,255,255,0.07)] py-3 shadow-lg'
+            : 'bg-[rgba(15,14,13,0.90)] backdrop-blur-xl border-b border-[rgba(255,255,255,0.04)] py-4'
         }`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="shrink-0 group">
             <Image
-              src="/logo.png"
+              src="/logo-white.png"
               alt="Tapit"
               width={100}
               height={40}
@@ -120,7 +107,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-[#6b6860] hover:text-[#1c1b19] rounded-lg transition-colors"
+                className="px-4 py-2 text-sm text-white/70 hover:text-white rounded-lg transition-colors"
               >
                 {link.label}
               </Link>
@@ -131,7 +118,7 @@ export default function Navbar() {
               <button
                 onClick={() => setDropdownOpen(o => !o)}
                 onMouseEnter={() => setDropdownOpen(true)}
-                className="flex items-center gap-1 px-4 py-2 text-sm text-[#6b6860] hover:text-[#1c1b19] rounded-lg transition-colors"
+                className="flex items-center gap-1 px-4 py-2 text-sm text-white/70 hover:text-white rounded-lg transition-colors"
               >
                 Usługi
                 <ChevronDown
@@ -146,10 +133,10 @@ export default function Navbar() {
                   className="absolute top-full left-1/2 mt-2 w-[580px]"
                   style={{ transform: 'translateX(-50%)' }}
                 >
-                <div className="bg-white border border-[rgba(0,0,0,0.09)] rounded-2xl shadow-xl shadow-black/5 p-5 grid grid-cols-3 gap-6 animate-fade-in">
+                <div className="bg-[#1a1918] border border-[rgba(255,255,255,0.08)] rounded-2xl shadow-2xl p-5 grid grid-cols-3 gap-6 animate-fade-in">
                   {Object.entries(services).map(([group, items]) => (
                     <div key={group}>
-                      <p className="text-xs uppercase tracking-[1.5px] text-[#6b6860] font-medium mb-3 font-heading">
+                      <p className="text-xs uppercase tracking-[1.5px] text-white/40 font-medium mb-3 font-heading">
                         {group}
                       </p>
                       <div className="space-y-1">
@@ -158,9 +145,9 @@ export default function Navbar() {
                             key={item.name}
                             href={item.href}
                             onClick={() => setDropdownOpen(false)}
-                            className="flex flex-col gap-0.5 px-3 py-2 rounded-xl hover:bg-[rgba(0,0,0,0.06)] transition-colors group"
+                            className="flex flex-col gap-0.5 px-3 py-2 rounded-xl hover:bg-[rgba(255,255,255,0.06)] transition-colors group"
                           >
-                            <span className="text-sm font-medium text-[#1c1b19] flex items-center gap-2">
+                            <span className="text-sm font-medium text-white flex items-center gap-2">
                               {item.name}
                               {'badge' in item && item.badge && (
                                 <span className="text-[10px] bg-accent/20 text-accent px-1.5 py-0.5 rounded-full font-medium">
@@ -168,7 +155,7 @@ export default function Navbar() {
                                 </span>
                               )}
                             </span>
-                            <span className="text-xs text-[#6b6860]">{item.desc}</span>
+                            <span className="text-xs text-white/50">{item.desc}</span>
                           </Link>
                         ))}
                       </div>
@@ -182,7 +169,7 @@ export default function Navbar() {
             {/* Wizytówka link */}
             <Link
               href="/sprawdz-wizytowke"
-              className="px-4 py-2 text-sm text-[#6b6860] hover:text-[#1c1b19] rounded-lg transition-colors"
+              className="px-4 py-2 text-sm text-white/70 hover:text-white rounded-lg transition-colors"
             >
               Sprawdź wizytówkę
             </Link>
@@ -200,7 +187,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileOpen(o => !o)}
               aria-label={mobileOpen ? 'Zamknij menu' : 'Otwórz menu'}
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-[#1c1b19] rounded-lg hover:bg-[rgba(0,0,0,0.07)] transition-colors"
+              className="lg:hidden w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-[rgba(255,255,255,0.08)] transition-colors"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>

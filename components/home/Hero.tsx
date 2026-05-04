@@ -121,9 +121,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/15 border border-accent/30 mb-6 w-fit"
+            className="inline-flex items-center gap-2 mb-6"
           >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse-dot" />
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse-dot shrink-0" />
             <span className="text-accent text-xs font-heading font-bold uppercase tracking-[2px]">
               Agencja marketingowa · Kraków
             </span>
