@@ -100,13 +100,13 @@ export default function Services() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 bg-[rgba(255,255,255,0.04)] rounded-2xl overflow-hidden"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {services.map(service => (
             <motion.div
               key={service.name}
               variants={item}
-              className="group relative bg-[#141312] p-8 hover:bg-[rgba(255,255,255,0.04)] transition-all duration-300 overflow-hidden"
+              className="group relative backdrop-blur-md bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.10)] hover:bg-[rgba(255,255,255,0.10)] hover:border-[rgba(255,255,255,0.18)] rounded-2xl p-8 transition-all duration-300 overflow-hidden"
             >
               {/* Top accent line */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
