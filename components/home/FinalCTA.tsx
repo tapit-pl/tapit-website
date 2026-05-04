@@ -17,7 +17,7 @@ export default function FinalCTA() {
       className="py-24 relative overflow-hidden"
       style={{
         background:
-          'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(99,102,241,0.04) 0%, transparent 100%)',
+          'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(245,60,60,0.04) 0%, transparent 100%)',
       }}
     >
       <div className="absolute inset-0 border-y border-accent/10 pointer-events-none" />

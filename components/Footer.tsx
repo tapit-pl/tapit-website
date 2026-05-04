@@ -30,9 +30,9 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="w-7 h-7 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
                 <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                  <circle cx="7" cy="7" r="2.5" fill="#6366f1" />
-                  <path d="M3.5 10.5a5 5 0 0 1 0-7" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
-                  <path d="M10.5 10.5a5 5 0 0 0 0-7" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
+                  <circle cx="7" cy="7" r="2.5" fill="#f53c3c" />
+                  <path d="M3.5 10.5a5 5 0 0 1 0-7" stroke="#f53c3c" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
+                  <path d="M10.5 10.5a5 5 0 0 0 0-7" stroke="#f53c3c" strokeWidth="1.5" strokeLinecap="round" fill="none" opacity="0.7" />
                 </svg>
               </div>
               <span className="font-heading font-extrabold text-lg text-[#1c1b19]">

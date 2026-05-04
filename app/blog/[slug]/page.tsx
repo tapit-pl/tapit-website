@@ -131,7 +131,7 @@ export default function BlogPostPage({ params }: Props) {
           {/* Author */}
           <div className="mt-12 pt-8 border-t border-[rgba(0,0,0,0.08)] flex items-center gap-4">
             <div className="w-12 h-12 rounded-full flex items-center justify-center font-heading font-bold text-white shrink-0"
-              style={{ background: 'linear-gradient(135deg, #6366f1, #f59e0b)' }}>
+              style={{ background: 'linear-gradient(135deg, #f53c3c, #f59e0b)' }}>
               MS
             </div>
             <div>

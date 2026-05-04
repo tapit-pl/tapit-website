@@ -37,7 +37,7 @@ export default function ServicePage({
         <div
           aria-hidden
           className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06]"
-          style={{ background: 'radial-gradient(circle, #6366f1 0%, transparent 70%)', transform: 'translate(30%, -30%)' }}
+          style={{ background: 'radial-gradient(circle, #f53c3c 0%, transparent 70%)', transform: 'translate(30%, -30%)' }}
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl">

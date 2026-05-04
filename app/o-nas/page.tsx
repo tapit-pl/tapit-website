@@ -78,7 +78,7 @@ export default function AboutPage() {
               <div
                 aria-hidden
                 className="absolute -bottom-4 -right-4 w-32 h-32 rounded-2xl border border-accent/20"
-                style={{ background: 'rgba(99,102,241,0.03)' }}
+                style={{ background: 'rgba(245,60,60,0.03)' }}
               />
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function AboutPage() {
               className="group bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.08)] rounded-2xl p-6 text-center hover:border-accent/25 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center font-heading font-bold text-lg text-white"
-                style={{ background: 'linear-gradient(135deg, #6366f1, #f59e0b)' }}>
+                style={{ background: 'linear-gradient(135deg, #f53c3c, #f59e0b)' }}>
                 {member.initials}
               </div>
               <p className="font-heading font-bold text-sm text-[#1c1b19] leading-snug">{member.name}</p>

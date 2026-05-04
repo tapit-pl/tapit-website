@@ -71,7 +71,7 @@ export default function Hero() {
           aria-hidden
           className="pointer-events-none absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.07]"
           style={{
-            background: 'radial-gradient(circle, #6366f1 0%, transparent 70%)',
+            background: 'radial-gradient(circle, #f53c3c 0%, transparent 70%)',
             transform: 'translate(20%, -20%)',
           }}
         />

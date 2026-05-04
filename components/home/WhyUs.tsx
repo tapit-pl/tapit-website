@@ -51,7 +51,7 @@ export default function WhyUs() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group relative bg-[rgba(0,0,0,0.03)] border border-[rgba(0,0,0,0.07)] rounded-2xl p-10 hover:border-accent/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               style={{
-                boxShadow: '0 0 0 0 rgba(99,102,241,0)',
+                boxShadow: '0 0 0 0 rgba(245,60,60,0)',
               }}
             >
               {/* Big number watermark */}

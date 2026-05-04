@@ -17,7 +17,7 @@ export default function AuditPage() {
         className="pt-20 pb-16 md:pt-28 relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(180deg, rgba(99,102,241,0.04) 0%, transparent 60%)',
+            'linear-gradient(180deg, rgba(245,60,60,0.04) 0%, transparent 60%)',
         }}
       >
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
@@ -56,7 +56,7 @@ export default function AuditPage() {
               onChange={e => setBudget(Number(e.target.value))}
               className="w-full h-2 rounded-full appearance-none cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #6366f1 0%, #6366f1 ${((budget - 1000) / 49000) * 100}%, rgba(0,0,0,0.08) ${((budget - 1000) / 49000) * 100}%, rgba(0,0,0,0.08) 100%)`,
+                background: `linear-gradient(to right, #f53c3c 0%, #f53c3c ${((budget - 1000) / 49000) * 100}%, rgba(0,0,0,0.08) ${((budget - 1000) / 49000) * 100}%, rgba(0,0,0,0.08) 100%)`,
               }}
             />
             <div className="flex justify-between text-xs text-[#6b6860] mt-1.5">

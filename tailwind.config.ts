@@ -11,9 +11,9 @@ const config: Config = {
       colors: {
         bg: '#fafaf8',
         accent: {
-          DEFAULT: '#6366f1',
-          hover: '#4f46e5',
-          muted: 'rgba(99,102,241,0.1)',
+          DEFAULT: '#f53c3c',
+          hover: '#d93232',
+          muted: 'rgba(245,60,60,0.1)',
         },
         'text-primary': '#1c1b19',
         'text-muted': '#6b6860',
