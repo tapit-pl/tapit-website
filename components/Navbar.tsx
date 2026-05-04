@@ -33,13 +33,27 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const lastY = useRef(0)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10)
+    const onScroll = () => {
+      const y = window.scrollY
+      setScrolled(y > 10)
+      if (y < 80) {
+        setHidden(false)
+      } else if (y > lastY.current + 6) {
+        setHidden(true)
+        setDropdownOpen(false)
+      } else if (y < lastY.current - 4) {
+        setHidden(false)
+      }
+      lastY.current = y
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -62,10 +76,14 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Sticky wrapper — hides on scroll down */}
+      <div
+        className={`sticky top-0 z-50 transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}
+      >
       {/* Top bar */}
       <a
         href="/audyt"
-        className="block w-full bg-accent hover:bg-accent-hover transition-colors py-2 px-4 text-center z-50 relative"
+        className="block w-full bg-accent hover:bg-accent-hover transition-colors py-2 px-4 text-center relative"
       >
         <span className="hidden md:inline text-white text-sm font-medium">
           Darmowy audyt Twojego marketingu — sprawdź, ile tracisz →
@@ -77,7 +95,7 @@ export default function Navbar() {
 
       {/* Main nav */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
+        className={`transition-all duration-300 ${
           scrolled
             ? 'bg-[rgba(250,250,248,0.97)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.08)] py-3 shadow-sm'
             : 'bg-[rgba(250,250,248,0.90)] backdrop-blur-xl border-b border-[rgba(0,0,0,0.05)] py-4'
@@ -189,6 +207,7 @@ export default function Navbar() {
           </div>
         </nav>
       </header>
+      </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
