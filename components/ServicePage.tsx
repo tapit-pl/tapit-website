@@ -133,7 +133,7 @@ export default function ServicePage({
       <section className="py-16 max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <h2 className="mb-4">Chcesz takich wyników?</h2>
         <p className="text-[#b0ada5] text-lg mb-8">
-          Zamów darmowy audyt — sprawdzimy, co możemy osiągnąć dla Twojego biznesu.
+          Zamów darmowy audyt - sprawdzimy, co możemy osiągnąć dla Twojego biznesu.
         </p>
         <Link
           href="/audyt"

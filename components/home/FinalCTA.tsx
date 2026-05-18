@@ -5,10 +5,20 @@ import { ArrowRight, CheckCircle } from 'lucide-react'
 
 export default function FinalCTA() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: wire up to backend
+    setLoading(true)
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: email, email, company: '', phone: '', service: 'Zapytanie ze strony glownej', message: '' }),
+      })
+    } catch {}
+    setLoading(false)
     setSubmitted(true)
   }
 
@@ -39,14 +49,17 @@ export default function FinalCTA() {
                 type="email"
                 required
                 placeholder="Twój adres e-mail"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
                 className="flex-1 px-5 py-3.5 rounded-full bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
               />
               <button
                 type="submit"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all hover:shadow-lg hover:shadow-accent/25 whitespace-nowrap"
+                disabled={loading}
+                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all hover:shadow-lg hover:shadow-accent/25 whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Zamów darmowy audyt
-                <ArrowRight size={14} />
+                {loading ? 'Wysyłanie...' : 'Zamów darmowy audyt'}
+                {!loading && <ArrowRight size={14} />}
               </button>
             </form>
             <p className="mt-5 text-[#b0ada5] text-sm">

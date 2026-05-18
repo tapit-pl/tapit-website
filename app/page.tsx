@@ -9,7 +9,7 @@ import FAQ from '@/components/home/FAQ'
 import FinalCTA from '@/components/home/FinalCTA'
 
 export const metadata: Metadata = {
-  title: 'Tapit — Agencja marketingowa Kraków | Google Ads, SEO, Marketing lokalny',
+  title: 'Tapit - Agencja marketingowa Kraków | Google Ads, SEO, Marketing lokalny',
   description:
     'Dotknij, a zajmiemy się resztą. Więcej klientów dzięki Google Ads, SEO, marketingowi lokalnemu i pozycjonowaniu w AI. Agencja marketingowa z Krakowa.',
 }

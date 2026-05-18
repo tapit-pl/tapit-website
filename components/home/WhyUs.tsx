@@ -17,12 +17,12 @@ const reasons = [
   {
     num: '03',
     title: 'Bez długich umów',
-    desc: 'Nie wiążemy klientów 12-miesięcznymi kontraktami. Zostajesz, bo widzisz wyniki — nie dlatego, że musisz. To motywuje nas do lepszej pracy.',
+    desc: 'Nie wiążemy klientów 12-miesięcznymi kontraktami. Zostajesz, bo widzisz wyniki - nie dlatego, że musisz. To motywuje nas do lepszej pracy.',
   },
   {
     num: '04',
     title: 'Jeden zespół, pełna obsługa',
-    desc: 'Od reklam przez SEO po analitykę — wszystko pod jednym dachem. Bez przekazywania między agencjami, bez gubienia kontekstu. Jeden opiekun, jedna strategia.',
+    desc: 'Od reklam przez SEO po analitykę - wszystko pod jednym dachem. Bez przekazywania między agencjami, bez gubienia kontekstu. Jeden opiekun, jedna strategia.',
   },
 ]
 

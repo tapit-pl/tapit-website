@@ -4,9 +4,9 @@ import SectionTag from '@/components/SectionTag'
 import FinalCTA from '@/components/home/FinalCTA'
 
 export const metadata: Metadata = {
-  title: 'O nas — Tapit',
+  title: 'O nas - Tapit',
   description:
-    'Poznaj historię Tapit — agencji marketingowej z Krakowa. Od sceny do pierwszej strony Google. Założyciel Maciej Sieńko i zespół specjalistów.',
+    'Poznaj historię Tapit - agencji marketingowej z Krakowa. Od sceny do pierwszej strony Google. Założyciel Maciej Sieńko i zespół specjalistów.',
 }
 
 const team = [
@@ -26,12 +26,12 @@ const values = [
   {
     icon: Handshake,
     title: 'Partnerstwo',
-    desc: 'Nie jesteśmy dostawcą usługi — jesteśmy częścią Twojego zespołu. Twoje cele są naszymi celami.',
+    desc: 'Nie jesteśmy dostawcą usługi - jesteśmy częścią Twojego zespołu. Twoje cele są naszymi celami.',
   },
   {
     icon: TrendingUp,
     title: 'Wynik',
-    desc: 'Jedyna metryka, która się liczy. Nie obiecujemy — pokazujemy liczby.',
+    desc: 'Jedyna metryka, która się liczy. Nie obiecujemy - pokazujemy liczby.',
   },
 ]
 
@@ -52,20 +52,20 @@ export default function AboutPage() {
                   Przez wiele lat występowałem jako iluzjonista. W tej branży, żeby mieć zlecenia, trzeba być widocznym w internecie. Przez lata rozwijałem swoją markę osobistą do tego stopnia, że po wpisaniu frazy &ldquo;iluzjonista Kraków&rdquo; wyświetlam się na pierwszych pozycjach Google.
                 </p>
                 <p>
-                  W pewnym momencie zrozumiałem, że mogę to samo robić dla innych firm — wynieść je na pozycje, na których znajdą ich klienci.
+                  W pewnym momencie zrozumiałem, że mogę to samo robić dla innych firm - wynieść je na pozycje, na których znajdą ich klienci.
                 </p>
               </div>
 
               {/* Blockquote */}
               <blockquote className="my-8 pl-6 border-l-[3px] border-accent">
                 <p className="font-heading font-bold text-2xl text-[#f8f7f4] leading-snug">
-                  &ldquo;Mechanizm jest ten sam — przyciąganie uwagi. Na scenie robiłem to gestem i słowem. W internecie robię to danymi i strategią.&rdquo;
+                  &ldquo;Mechanizm jest ten sam - przyciąganie uwagi. Na scenie robiłem to gestem i słowem. W internecie robię to danymi i strategią.&rdquo;
                 </p>
-                <footer className="mt-3 text-sm text-accent font-medium">— Maciej Sieńko, założyciel Tapit</footer>
+                <footer className="mt-3 text-sm text-accent font-medium">- Maciej Sieńko, założyciel Tapit</footer>
               </blockquote>
 
               <p className="text-[#b0ada5] text-base leading-relaxed">
-                Tak powstało Tapit — od &ldquo;tap it&rdquo;, czyli dotknij, a my zajmiemy się resztą. Ale Tapit to też coś więcej. To podejście do klientów jak do partnerów — wszystkich traktujemy na tym samym, koleżeńsko-biznesowym poziomie.
+                Tak powstało Tapit - od &ldquo;tap it&rdquo;, czyli dotknij, a my zajmiemy się resztą. Ale Tapit to też coś więcej. To podejście do klientów jak do partnerów - wszystkich traktujemy na tym samym, koleżeńsko-biznesowym poziomie.
               </p>
             </div>
 

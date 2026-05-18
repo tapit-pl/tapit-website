@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import FloatingButtons from '@/components/FloatingButtons'
 import CookieBanner from '@/components/CookieBanner'
 import ScrollToTop from '@/components/ScrollToTop'
+import UrgentNotice from '@/components/UrgentNotice'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -23,7 +24,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Tapit — Agencja Marketingowa Kraków',
+    default: 'Tapit - Agencja Marketingowa Kraków',
     template: '%s | Tapit',
   },
   description:
@@ -38,14 +39,14 @@ export const metadata: Metadata = {
     'Meta Ads',
   ],
   authors: [{ name: 'Maciej Sieńko', url: 'https://tapit.com.pl' }],
-  creator: 'Tapit — Maciej Sieńko',
+  creator: 'Tapit - Maciej Sieńko',
   metadataBase: new URL('https://tapit.com.pl'),
   openGraph: {
     type: 'website',
     locale: 'pl_PL',
     url: 'https://tapit.com.pl',
     siteName: 'Tapit',
-    title: 'Tapit — Agencja marketingowa z Krakowa',
+    title: 'Tapit - Agencja marketingowa z Krakowa',
     description:
       'Więcej klientów, mniej przepalonego budżetu. Google Ads, SEO, marketing lokalny i pozycjonowanie w AI.',
     images: [
@@ -53,13 +54,13 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Tapit — Agencja marketingowa Kraków',
+        alt: 'Tapit - Agencja marketingowa Kraków',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tapit — Agencja marketingowa Kraków',
+    title: 'Tapit - Agencja marketingowa Kraków',
     description: 'Więcej klientów, mniej przepalonego budżetu.',
   },
   robots: {
@@ -89,6 +90,7 @@ export default function RootLayout({
         <FloatingButtons />
         <CookieBanner />
         <ScrollToTop />
+        <UrgentNotice />
       </body>
     </html>
   )

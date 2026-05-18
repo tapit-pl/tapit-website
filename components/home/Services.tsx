@@ -83,7 +83,7 @@ export default function Services() {
           <SectionTag className="justify-center" dark>Usługi</SectionTag>
           <h2 className="mb-4 text-white">Czym się zajmujemy</h2>
           <p className="text-white/50 text-lg max-w-xl mx-auto">
-            Od reklam w Google po pozycjonowanie w AI — dobieramy narzędzia do Twojego biznesu, nie odwrotnie.
+            Od reklam w Google po pozycjonowanie w AI - dobieramy narzędzia do Twojego biznesu, nie odwrotnie.
           </p>
         </motion.div>
 
@@ -101,7 +101,7 @@ export default function Services() {
               className="group h-56"
               style={{ perspective: '1000px' }}
             >
-              {/* Card inner — rotates on hover */}
+              {/* Card inner - rotates on hover */}
               <div
                 className="relative w-full h-full transition-transform duration-700 ease-in-out group-hover:[transform:rotateY(180deg)]"
                 style={{ transformStyle: 'preserve-3d' }}

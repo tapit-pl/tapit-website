@@ -30,7 +30,7 @@ export default function Process() {
   return (
     <section className="relative py-24 overflow-hidden bg-[#0f0e0d]">
 
-      {/* Background photo — city office buildings */}
+      {/* Background photo - city office buildings */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-cover bg-center"

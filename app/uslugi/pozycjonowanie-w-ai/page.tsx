@@ -3,7 +3,7 @@ import { Brain } from 'lucide-react'
 import ServicePage from '@/components/ServicePage'
 
 export const metadata: Metadata = {
-  title: 'Pozycjonowanie w AI — Tapit',
+  title: 'Pozycjonowanie w AI - Tapit',
   description: 'Optymalizuj obecność Twojej firmy pod ChatGPT, Perplexity i Google AI Overview. Nowy kanał dotarcia, który większość firm ignoruje.',
 }
 
@@ -12,16 +12,16 @@ export default function AiPositioningPage() {
     <ServicePage
       tag="Usługi / Pozycjonowanie w AI"
       title="Pozycjonowanie w AI"
-      subtitle="Optymalizujemy Twoją obecność pod ChatGPT, Perplexity i inne wyszukiwarki AI. Nowy kanał dotarcia do klientów, który rośnie z miesiąca na miesiąc — i który większość firm nadal ignoruje."
+      subtitle="Optymalizujemy Twoją obecność pod ChatGPT, Perplexity i inne wyszukiwarki AI. Nowy kanał dotarcia do klientów, który rośnie z miesiąca na miesiąc - i który większość firm nadal ignoruje."
       Icon={Brain}
       problems={[
-        'Twoi potencjalni klienci coraz częściej pytają ChatGPT lub Perplexity zamiast Google — i dostają odpowiedzi, w których Cię nie ma.',
-        'Nie wiesz, czy i jak Twoja firma pojawia się w odpowiedziach narzędzi AI — brakuje Ci widoczności w tym nowym kanale.',
+        'Twoi potencjalni klienci coraz częściej pytają ChatGPT lub Perplexity zamiast Google - i dostają odpowiedzi, w których Cię nie ma.',
+        'Nie wiesz, czy i jak Twoja firma pojawia się w odpowiedziach narzędzi AI - brakuje Ci widoczności w tym nowym kanale.',
         'Konkurencja zaczyna pojawiać się w odpowiedziach AI jako polecana opcja w Twojej branży i mieście.',
         'Treści na Twojej stronie nie są zoptymalizowane pod pytania konwersacyjne, które zadają narzędzia AI.',
       ]}
       solutionTitle="Jak to rozwiązujemy"
-      solutionText="Pozycjonowanie w AI to kombinacja treści eksperckich, danych strukturalnych i obecności w źródłach, z których uczą się modele językowe. Nie ma tu skrótów — ale jest konkretna, powtarzalna metodologia."
+      solutionText="Pozycjonowanie w AI to kombinacja treści eksperckich, danych strukturalnych i obecności w źródłach, z których uczą się modele językowe. Nie ma tu skrótów - ale jest konkretna, powtarzalna metodologia."
       solutionPoints={[
         'Audyt obecnej widoczności w ChatGPT, Perplexity i Google AI Overview',
         'Strategia treści eksperckich i Q&A odpowiadających na pytania Twoich klientów',

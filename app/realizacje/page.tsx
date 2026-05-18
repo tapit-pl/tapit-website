@@ -4,10 +4,10 @@ import { caseStudies } from '@/lib/caseStudies'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Realizacje — Case Studies | Tapit Agencja Marketingowa Kraków',
-  description: 'Sprawdź konkretne wyniki naszych klientów. Prawdziwe liczby z kampanii Google Ads, SEO i marketingu lokalnego — e-commerce, gastronomia, budownictwo, prawo.',
+  title: 'Realizacje - Case Studies | Tapit Agencja Marketingowa Kraków',
+  description: 'Sprawdź konkretne wyniki naszych klientów. Prawdziwe liczby z kampanii Google Ads, SEO i marketingu lokalnego - e-commerce, gastronomia, budownictwo, prawo.',
   openGraph: {
-    title: 'Realizacje — Case Studies | Tapit',
+    title: 'Realizacje - Case Studies | Tapit',
     description: 'Konkretne wyniki marketingowe naszych klientów.',
   },
 }
@@ -38,7 +38,7 @@ export default function RealizacjePage() {
             Wyniki, które mówią same za siebie
           </h1>
           <p className="text-[#b0ada5] text-lg leading-relaxed">
-            Konkretne liczby od prawdziwych klientów. Bez retuszu, bez uśredniania — tylko to, co faktycznie osiągnęliśmy razem.
+            Konkretne liczby od prawdziwych klientów. Bez retuszu, bez uśredniania - tylko to, co faktycznie osiągnęliśmy razem.
           </p>
         </div>
 

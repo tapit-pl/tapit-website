@@ -11,7 +11,7 @@ const cases = [
     metric: '#1',
     metricLabel: 'pozycja wizytówki Google',
     title: 'Adwokat widoczny tam, gdzie szukają klienci',
-    desc: 'Kancelaria adwokacka zgłosiła się do nas z problemem zerowej widoczności w lokalnych wynikach Google. Po audycie wizytówki, uzupełnieniu profilu i wdrożeniu strategii lokalnego SEO — kancelaria zajęła pierwszą pozycję na frazy takie jak „adwokat Koszalin". Klienci sami przychodzą.',
+    desc: 'Kancelaria adwokacka zgłosiła się do nas z problemem zerowej widoczności w lokalnych wynikach Google. Po audycie wizytówki, uzupełnieniu profilu i wdrożeniu strategii lokalnego SEO - kancelaria zajęła pierwszą pozycję na frazy takie jak „adwokat Koszalin". Klienci sami przychodzą.',
     href: '/realizacje',
   },
   {
@@ -27,7 +27,7 @@ const cases = [
     metric: '+230%',
     metricLabel: 'wzrost ruchu organicznego',
     title: 'Gravier: nowa strona, nowe życie w Google',
-    desc: 'Stara strona Gravier nie mierzyła niczego — brak analityki, brak Consent Mode, brak danych. Po kompleksowej przebudowie strony, wdrożeniu GA4, GTM i Consent Mode v2 ruch organiczny wzrósł o 230%. Firma nareszcie wie, co działa.',
+    desc: 'Stara strona Gravier nie mierzyła niczego - brak analityki, brak Consent Mode, brak danych. Po kompleksowej przebudowie strony, wdrożeniu GA4, GTM i Consent Mode v2 ruch organiczny wzrósł o 230%. Firma nareszcie wie, co działa.',
     href: '/realizacje',
   },
 ]

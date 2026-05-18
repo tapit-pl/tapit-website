@@ -25,7 +25,7 @@ export default function AuditPage() {
           <SectionTag className="justify-center">Darmowy audyt</SectionTag>
           <h1 className="mb-6">Sprawdź, gdzie znika Twój budżet</h1>
           <p className="text-[#b0ada5] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            Nasi specjaliści przeanalizują Twoją stronę, reklamy i widoczność w Google. Dostaniesz raport z konkretnymi rekomendacjami — co poprawić, żeby przestać tracić pieniądze. Bez zobowiązań.
+            Nasi specjaliści przeanalizują Twoją stronę, reklamy i widoczność w Google. Dostaniesz raport z konkretnymi rekomendacjami - co poprawić, żeby przestać tracić pieniądze. Bez zobowiązań.
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function AuditPage() {
             href="#formularz"
             className="mt-6 flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-accent hover:bg-accent-hover text-white font-heading font-bold transition-all hover:shadow-lg hover:shadow-accent/25"
           >
-            Zamów darmowy audyt — pokażemy Ci, gdzie dokładnie
+            Zamów darmowy audyt - pokażemy Ci, gdzie dokładnie
           </a>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default function AuditPage() {
               {
                 icon: FileText,
                 title: 'Raport z rekomendacjami',
-                desc: 'Dostaniesz konkretny plan — co poprawić i jakich wyników się spodziewać.',
+                desc: 'Dostaniesz konkretny plan - co poprawić i jakich wyników się spodziewać.',
               },
             ].map(item => (
               <div
@@ -157,7 +157,7 @@ export default function AuditPage() {
         </div>
 
         <p className="text-center text-[#b0ada5] text-sm">
-          Każdy audyt jest spersonalizowany — analizujemy Twoją konkretną sytuację, nie wysyłamy generycznych PDF-ów.
+          Każdy audyt jest spersonalizowany - analizujemy Twoją konkretną sytuację, nie wysyłamy generycznych PDF-ów.
         </p>
       </section>
 
@@ -168,7 +168,7 @@ export default function AuditPage() {
             Zamów darmowy audyt
           </h2>
           <p className="text-[#b0ada5] text-sm mb-6">
-            Wypełnij formularz — nasz specjalista skontaktuje się z Tobą w ciągu 24h.
+            Wypełnij formularz - nasz specjalista skontaktuje się z Tobą w ciągu 24h.
           </p>
           <ContactForm variant="audit" showCheckboxes />
           <p className="mt-4 text-center text-xs text-[#b0ada5]">
@@ -187,7 +187,7 @@ export default function AuditPage() {
             <p className="text-[#f8f7f4] text-base leading-relaxed">
               Twój audyt otrzymasz w formie{' '}
               <strong className="text-accent">spersonalizowanego nagrania wideo</strong>{' '}
-              — nasz specjalista pokaże Ci palcem, co wymaga poprawy i dlaczego. Żadnych generycznych raportów.
+              - nasz specjalista pokaże Ci palcem, co wymaga poprawy i dlaczego. Żadnych generycznych raportów.
             </p>
           </div>
         </div>

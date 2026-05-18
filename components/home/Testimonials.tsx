@@ -12,12 +12,12 @@ const testimonials = [
     company: 'Restauracja Zielony Talerz',
   },
   {
-    quote: 'Wreszcie agencja, która mówi prostym językiem i dostarcza to, co obiecuje. Maciej i zespół doskonale rozumieją nasz biznes — czujemy się jak partnerzy, nie jak kolejny klient.',
+    quote: 'Wreszcie agencja, która mówi prostym językiem i dostarcza to, co obiecuje. Maciej i zespół doskonale rozumieją nasz biznes - czujemy się jak partnerzy, nie jak kolejny klient.',
     name: 'Paweł Nowak',
     company: 'Kancelaria Prawna Nowak',
   },
   {
-    quote: 'Przyszłam z minimalną widocznością w Google, a dziś jestem numerem jeden w swoim mieście. Consent Mode, Google Ads, SEO — zrobili wszystko od A do Z. Polecam z całego serca.',
+    quote: 'Przyszłam z minimalną widocznością w Google, a dziś jestem numerem jeden w swoim mieście. Consent Mode, Google Ads, SEO - zrobili wszystko od A do Z. Polecam z całego serca.',
     name: 'Katarzyna Wiśniewska',
     company: 'Klinika Dental & Beauty',
   },
@@ -27,7 +27,7 @@ const testimonials = [
     company: 'DevHouse Studio',
   },
   {
-    quote: 'Dzięki pozycjonowaniu w AI moja firma zaczęła pojawiać się w odpowiedziach ChatGPT. Klienci dzwonią i pytają, jak nas znaleźli — bo AI im powiedział. To przyszłość marketingu.',
+    quote: 'Dzięki pozycjonowaniu w AI moja firma zaczęła pojawiać się w odpowiedziach ChatGPT. Klienci dzwonią i pytają, jak nas znaleźli - bo AI im powiedział. To przyszłość marketingu.',
     name: 'Agnieszka Dąbrowska',
     company: 'AutoParts Kraków',
   },

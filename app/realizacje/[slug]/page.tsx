@@ -16,10 +16,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cs = getCaseStudy(params.slug)
   if (!cs) return {}
   return {
-    title: `${cs.client} — Case Study | Tapit`,
+    title: `${cs.client} - Case Study | Tapit`,
     description: `Jak pomogliśmy ${cs.client} osiągnąć wyniki w ${cs.industry}. Sprawdź konkretne liczby z ${cs.period} współpracy.`,
     openGraph: {
-      title: `${cs.client} — Case Study | Tapit`,
+      title: `${cs.client} - Case Study | Tapit`,
       description: `${cs.results[0].metric} ${cs.results[0].label} w ${cs.period}.`,
     },
   }

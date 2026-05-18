@@ -3,7 +3,7 @@ import { TrendingUp } from 'lucide-react'
 import ServicePage from '@/components/ServicePage'
 
 export const metadata: Metadata = {
-  title: 'Pozycjonowanie SEO — Tapit',
+  title: 'Pozycjonowanie SEO - Tapit',
   description: 'Długofalowe pozycjonowanie SEO w Google. Budujemy organiczny ruch, który nie znika gdy wyłączysz reklamy.',
 }
 
@@ -15,13 +15,13 @@ export default function SeoPage() {
       subtitle="Budujemy widoczność Twojej strony w wynikach organicznych Google. Długofalowa strategia, która przynosi stały ruch bez ciągłego płacenia za każde kliknięcie."
       Icon={TrendingUp}
       problems={[
-        'Twoja strona nie pojawia się w Google na frazy, na które Twoi klienci szukają usług — wszystkich odwiedzających musisz kupować w reklamach.',
-        'Poprzednia agencja obiecywała efekty, ale po roku pozycji brak — nie wiesz, co poszło nie tak i czy cokolwiek w ogóle było robione.',
+        'Twoja strona nie pojawia się w Google na frazy, na które Twoi klienci szukają usług - wszystkich odwiedzających musisz kupować w reklamach.',
+        'Poprzednia agencja obiecywała efekty, ale po roku pozycji brak - nie wiesz, co poszło nie tak i czy cokolwiek w ogóle było robione.',
         'Masz ruch na stronie, ale nie wiesz, czy pochodzi z właściwych fraz i czy to są Twoi potencjalni klienci.',
-        'Konkurencja zajmuje pierwsze miejsca w Google od lat — nie wiesz, jak możesz ich dogonić.',
+        'Konkurencja zajmuje pierwsze miejsca w Google od lat - nie wiesz, jak możesz ich dogonić.',
       ]}
       solutionTitle="Jak to rozwiązujemy"
-      solutionText="SEO to maraton, nie sprint — ale musi być prowadzony z planem. Zaczynamy od audytu technicznego strony i analizy fraz kluczowych. Potem działamy jednocześnie na trzech frontach: SEO techniczne, treści i link building."
+      solutionText="SEO to maraton, nie sprint - ale musi być prowadzony z planem. Zaczynamy od audytu technicznego strony i analizy fraz kluczowych. Potem działamy jednocześnie na trzech frontach: SEO techniczne, treści i link building."
       solutionPoints={[
         'Audyt techniczny: szybkość strony, Core Web Vitals, indeksacja, dane strukturalne',
         'Strategia słów kluczowych dopasowana do intencji zakupowych Twoich klientów',

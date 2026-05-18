@@ -4,9 +4,9 @@ import SectionTag from '@/components/SectionTag'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Kontakt — Tapit',
+  title: 'Kontakt - Tapit',
   description:
-    'Skontaktuj się z agencją marketingową Tapit z Krakowa. Zadzwoń, napisz lub wypełnij formularz — odpiszemy w 24 godziny.',
+    'Skontaktuj się z agencją marketingową Tapit z Krakowa. Zadzwoń, napisz lub wypełnij formularz - odpiszemy w 24 godziny.',
 }
 
 export default function ContactPage() {

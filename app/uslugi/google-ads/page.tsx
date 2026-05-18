@@ -3,7 +3,7 @@ import { Target } from 'lucide-react'
 import ServicePage from '@/components/ServicePage'
 
 export const metadata: Metadata = {
-  title: 'Google Ads & PPC — Tapit',
+  title: 'Google Ads & PPC - Tapit',
   description: 'Precyzyjne kampanie PPC w Google, Meta, TikTok i LinkedIn. Płacisz tylko za kliknięcia od klientów, którzy szukają Twoich usług.',
 }
 
@@ -15,13 +15,13 @@ export default function GoogleAdsPage() {
       subtitle="Precyzyjne kampanie reklamowe w Google, Meta, TikTok i LinkedIn, które docierają do Twoich klientów dokładnie wtedy, gdy szukają Twoich usług. Płacisz tylko za realne kliknięcia."
       Icon={Target}
       problems={[
-        'Prowadzisz kampanie Google Ads, ale nie wiesz, czy budżet jest dobrze wydawany — brakuje Ci przejrzystych wyników.',
+        'Prowadzisz kampanie Google Ads, ale nie wiesz, czy budżet jest dobrze wydawany - brakuje Ci przejrzystych wyników.',
         'Twoje reklamy wyświetlają się na niewłaściwe frazy, przez co płacisz za kliknięcia osób, które nigdy nie zostaną Twoimi klientami.',
-        'Reklamy mają wysokie koszty kliknięcia (CPC), ale niską konwersję — strona nie przekształca odwiedzających w zapytania.',
+        'Reklamy mają wysokie koszty kliknięcia (CPC), ale niską konwersję - strona nie przekształca odwiedzających w zapytania.',
         'Nie masz czasu ani wiedzy, żeby śledzić zmiany w platformach reklamowych i optymalizować kampanie na bieżąco.',
       ]}
       solutionTitle="Jak to rozwiązujemy"
-      solutionText="Podchodzimy do kampanii PPC analitycznie. Zaczynamy od audytu konta i analizy konkurencji, żeby wiedzieć, na czym stoisz. Następnie budujemy strukturę kampanii dopasowaną do Twoich celów biznesowych — nie do wskaźników, które dobrze wyglądają w raporcie."
+      solutionText="Podchodzimy do kampanii PPC analitycznie. Zaczynamy od audytu konta i analizy konkurencji, żeby wiedzieć, na czym stoisz. Następnie budujemy strukturę kampanii dopasowaną do Twoich celów biznesowych - nie do wskaźników, które dobrze wyglądają w raporcie."
       solutionPoints={[
         'Pełny audyt istniejącego konta i identyfikacja przepalanych budżetów',
         'Badanie słów kluczowych i lista wykluczeń minimalizująca nietrafialne kliknięcia',

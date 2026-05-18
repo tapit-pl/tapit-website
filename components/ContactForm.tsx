@@ -10,7 +10,7 @@ const services = [
   'Pozycjonowanie w AI',
   'Strona internetowa',
   'Analityka i Consent Mode',
-  'Nie wiem — doradźcie',
+  'Nie wiem - doradźcie',
 ]
 
 interface ContactFormProps {
@@ -199,7 +199,7 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
         disabled={loading}
         className="w-full py-3.5 rounded-xl bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-accent/20 disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {loading ? 'Wysyłanie...' : variant === 'audit' ? 'Wyślij — odezwiemy się w 24h' : 'Wyślij zapytanie'}
+        {loading ? 'Wysyłanie...' : variant === 'audit' ? 'Wyślij - odezwiemy się w 24h' : 'Wyślij zapytanie'}
       </button>
 
       {error && (

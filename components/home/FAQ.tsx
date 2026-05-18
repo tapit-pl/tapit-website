@@ -8,7 +8,7 @@ import SectionTag from '@/components/SectionTag'
 const faqs = [
   {
     q: 'Ile kosztują Wasze usługi?',
-    a: 'To zależy od zakresu i branży. Dlatego zaczynamy od darmowego audytu — po nim przygotowujemy indywidualną wycenę. Nie mamy ukrytych kosztów.',
+    a: 'To zależy od zakresu i branży. Dlatego zaczynamy od darmowego audytu - po nim przygotowujemy indywidualną wycenę. Nie mamy ukrytych kosztów.',
   },
   {
     q: 'Jak szybko zobaczę wyniki?',
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: 'Czy muszę podpisać długą umowę?',
-    a: 'Nie. Pracujemy w modelu miesięcznym. Zostajesz, bo widzisz wyniki — nie dlatego, że Cię związaliśmy umową.',
+    a: 'Nie. Pracujemy w modelu miesięcznym. Zostajesz, bo widzisz wyniki - nie dlatego, że Cię związaliśmy umową.',
   },
   {
     q: 'Co to jest pozycjonowanie w AI?',
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: 'Jak wygląda darmowy audyt?',
-    a: 'Nasz specjalista analizuje Twoją stronę, konta reklamowe i widoczność w Google. Przygotowujemy raport z konkretnymi rekomendacjami — co poprawić i jakich wyników można osiągnąć. Bez zobowiązań.',
+    a: 'Nasz specjalista analizuje Twoją stronę, konta reklamowe i widoczność w Google. Przygotowujemy raport z konkretnymi rekomendacjami - co poprawić i jakich wyników można osiągnąć. Bez zobowiązań.',
   },
 ]
 

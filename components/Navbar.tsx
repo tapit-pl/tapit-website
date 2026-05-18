@@ -76,7 +76,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Sticky wrapper — hides on scroll down */}
+      {/* Sticky wrapper - hides on scroll down */}
       <div
         className={`sticky top-0 z-50 transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}
       >

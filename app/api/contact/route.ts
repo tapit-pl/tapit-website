@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
       <h2 style="color:#f53c3c;font-family:sans-serif">Nowe zapytanie z tapit.com.pl</h2>
       <table style="font-family:sans-serif;font-size:15px;border-collapse:collapse;width:100%">
         <tr><td style="padding:8px;color:#666;width:160px">Imię i nazwisko:</td><td style="padding:8px;font-weight:bold">${name}</td></tr>
-        <tr><td style="padding:8px;color:#666">Firma:</td><td style="padding:8px;font-weight:bold">${company || '—'}</td></tr>
+        <tr><td style="padding:8px;color:#666">Firma:</td><td style="padding:8px;font-weight:bold">${company || '-'}</td></tr>
         <tr><td style="padding:8px;color:#666">E-mail:</td><td style="padding:8px"><a href="mailto:${email}">${email}</a></td></tr>
         <tr><td style="padding:8px;color:#666">Telefon:</td><td style="padding:8px"><a href="tel:${phone}">${phone}</a></td></tr>
         ${url ? `<tr><td style="padding:8px;color:#666">Strona WWW:</td><td style="padding:8px"><a href="${url}">${url}</a></td></tr>` : ''}
@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
       from: '"Tapit.com.pl" <kontakt@tapit.com.pl>',
       to: 'kontakt@tapit.com.pl',
       replyTo: email,
-      subject: `Nowe zapytanie — ${name} (${company || email})`,
+      subject: `Nowe zapytanie - ${name} (${company || email})`,
       html,
     })
 

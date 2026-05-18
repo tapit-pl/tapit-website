@@ -5,7 +5,7 @@ import { blogPosts } from '@/lib/blog'
 import SectionTag from '@/components/SectionTag'
 
 export const metadata: Metadata = {
-  title: 'Blog — Tapit',
+  title: 'Blog - Tapit',
   description:
     'Praktyczne porady o Google Ads, SEO, marketingu lokalnym i pozycjonowaniu w AI od agencji Tapit z Krakowa.',
 }
@@ -18,7 +18,7 @@ export default function BlogPage() {
           <SectionTag>Blog</SectionTag>
           <h1 className="mb-4">Wiedza, która sprzedaje</h1>
           <p className="text-[#b0ada5] text-lg max-w-xl">
-            Praktyczne porady o marketingu cyfrowym — bez lania wody, z konkretnymi przykładami.
+            Praktyczne porady o marketingu cyfrowym - bez lania wody, z konkretnymi przykładami.
           </p>
         </div>
 

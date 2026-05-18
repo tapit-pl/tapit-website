@@ -5,14 +5,14 @@ import SectionTag from '@/components/SectionTag'
 import FinalCTA from '@/components/home/FinalCTA'
 
 export const metadata: Metadata = {
-  title: 'Usługi marketingowe — Tapit',
+  title: 'Usługi marketingowe - Tapit',
   description: 'Google Ads, SEO, marketing lokalny, pozycjonowanie w AI, strony internetowe i analityka. Kompleksowy marketing cyfrowy z Krakowa.',
 }
 
 const services = [
   { icon: Target, name: 'Google Ads & PPC', desc: 'Reklamy w Google, Meta, TikTok i LinkedIn. Płacisz tylko za kliknięcia od realnych klientów.', href: '/uslugi/google-ads' },
   { icon: TrendingUp, name: 'Pozycjonowanie SEO', desc: 'Organiczny ruch bez ciągłego płacenia za kliknięcia. Długofalowa inwestycja w widoczność.', href: '/uslugi/seo' },
-  { icon: MapPin, name: 'Marketing lokalny', desc: 'Wizytówka Google i lokalne SEO — bądź pierwszy w wynikach dla swojego miasta.', href: '/uslugi/marketing-lokalny' },
+  { icon: MapPin, name: 'Marketing lokalny', desc: 'Wizytówka Google i lokalne SEO - bądź pierwszy w wynikach dla swojego miasta.', href: '/uslugi/marketing-lokalny' },
   { icon: Brain, name: 'Pozycjonowanie w AI', desc: 'Obecność w ChatGPT, Perplexity i Google AI Overview. Nowy kanał, który rośnie każdego miesiąca.', href: '/uslugi/pozycjonowanie-w-ai', badge: 'Nowość' },
   { icon: Monitor, name: 'Strony internetowe', desc: 'Szybkie, piękne i konwertujące strony na Next.js. PageSpeed 90+ na mobile.', href: '/uslugi/strony-internetowe' },
   { icon: BarChart3, name: 'Analityka i Consent Mode', desc: 'GA4, GTM i Consent Mode v2. Dane, na których możesz polegać.', href: '/uslugi/analityka' },
@@ -27,7 +27,7 @@ export default function ServicesPage() {
             <SectionTag>Usługi</SectionTag>
             <h1 className="mb-5">Co robimy dla Twojego biznesu</h1>
             <p className="text-[#b0ada5] text-lg leading-relaxed">
-              Od reklam w Google po pozycjonowanie w AI — dobieramy narzędzia do Twojego biznesu, nie odwrotnie. Wszystko pod jednym dachem, jeden opiekun, jedna strategia.
+              Od reklam w Google po pozycjonowanie w AI - dobieramy narzędzia do Twojego biznesu, nie odwrotnie. Wszystko pod jednym dachem, jeden opiekun, jedna strategia.
             </p>
           </div>
 

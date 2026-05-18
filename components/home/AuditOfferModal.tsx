@@ -65,7 +65,7 @@ export default function AuditOfferModal({ open, onClose }: AuditOfferModalProps)
                   </h2>
 
                   <p className="text-[#b0ada5] text-sm leading-relaxed mb-6">
-                    Przeanalizujemy Twój marketing od zera — stronę, reklamy i widoczność w Google. Jeśli zdecydujesz się na współpracę po audycie, otrzymasz <strong className="text-[#f8f7f4]">10% rabatu na pierwszą fakturę</strong>.
+                    Przeanalizujemy Twój marketing od zera - stronę, reklamy i widoczność w Google. Jeśli zdecydujesz się na współpracę po audycie, otrzymasz <strong className="text-[#f8f7f4]">10% rabatu na pierwszą fakturę</strong>.
                   </p>
 
                   {/* Warunki */}
@@ -73,7 +73,7 @@ export default function AuditOfferModal({ open, onClose }: AuditOfferModalProps)
                     <div className="flex items-start gap-3">
                       <CheckCircle size={15} className="text-success shrink-0 mt-0.5" />
                       <p className="text-sm text-[#b0ada5]">
-                        Audyt jest <strong className="text-[#f8f7f4]">jednorazowy i bezpłatny</strong> — bez zobowiązań, bez ukrytych kosztów.
+                        Audyt jest <strong className="text-[#f8f7f4]">jednorazowy i bezpłatny</strong> - bez zobowiązań, bez ukrytych kosztów.
                       </p>
                     </div>
                     <div className="flex items-start gap-3">

@@ -147,7 +147,7 @@ export default function Hero() {
                 className="absolute bottom-0 left-0 right-0 h-[3px] rounded-full bg-accent/40 group-hover/dotknij:bg-accent/80 transition-colors duration-200"
               />
             </span>
-            {', a zajmiemy się resztą —'}
+            {', a zajmiemy się resztą -'}
             <br className="hidden md:block" />
             {' więcej klientów, mniej przepalonego budżetu'}
           </motion.h1>
@@ -159,7 +159,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="text-[#b0ada5] text-base md:text-lg leading-relaxed max-w-[540px] mb-10"
           >
-            Google Ads, SEO, marketing lokalny i pozycjonowanie w AI. Bez długich umów, bez korporacyjnego dystansu — z konkretnymi wynikami.
+            Google Ads, SEO, marketing lokalny i pozycjonowanie w AI. Bez długich umów, bez korporacyjnego dystansu - z konkretnymi wynikami.
           </motion.p>
 
           {/* CTA buttons */}

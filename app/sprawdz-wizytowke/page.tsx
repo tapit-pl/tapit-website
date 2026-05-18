@@ -4,7 +4,7 @@ import SectionTag from '@/components/SectionTag'
 import FinalCTA from '@/components/home/FinalCTA'
 
 export const metadata: Metadata = {
-  title: 'Sprawdź pozycję wizytówki Google — Tapit',
+  title: 'Sprawdź pozycję wizytówki Google - Tapit',
   description: 'Bezpłatne narzędzie do sprawdzania pozycji Twojej wizytówki Google Business Profile w wynikach lokalnych. Dowiedz się, gdzie jesteś w Google Maps.',
 }
 
@@ -17,7 +17,7 @@ export default function WizytowkaPage() {
           <SectionTag className="justify-center">Narzędzie</SectionTag>
           <h1 className="mb-5">Sprawdź pozycję wizytówki Google</h1>
           <p className="text-[#b0ada5] text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
-            Wpisz nazwę swojej firmy i lokalizację — sprawdź, na której pozycji wyświetlasz się w Google Maps. Bezpłatne, bez rejestracji.
+            Wpisz nazwę swojej firmy i lokalizację - sprawdź, na której pozycji wyświetlasz się w Google Maps. Bezpłatne, bez rejestracji.
           </p>
         </div>
       </section>
@@ -68,7 +68,7 @@ export default function WizytowkaPage() {
       <section className="py-16 max-w-3xl mx-auto px-4 sm:px-6 text-center">
         <h2 className="mb-4">Niska pozycja? Możemy to zmienić.</h2>
         <p className="text-[#b0ada5] text-lg mb-8">
-          Zamów darmowy audyt — przeanalizujemy Twoją wizytówkę i pokażemy, co zrobić, żeby wskoczyć wyżej w Google Maps.
+          Zamów darmowy audyt - przeanalizujemy Twoją wizytówkę i pokażemy, co zrobić, żeby wskoczyć wyżej w Google Maps.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
