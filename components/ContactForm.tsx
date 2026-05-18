@@ -29,7 +29,10 @@ const auditCheckboxes = [
 
 export default function ContactForm({ variant = 'default', showCheckboxes = false }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
   const [selected, setSelected] = useState<string[]>([])
+  const [fields, setFields] = useState({ name: '', company: '', email: '', phone: '', url: '', service: '', message: '' })
 
   const toggleCheckbox = (item: string) => {
     setSelected(prev =>
@@ -37,10 +40,26 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
     )
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: wire up to backend / email service
-    setSubmitted(true)
+    setLoading(true)
+    setError(false)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...fields, checkboxes: selected }),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -67,6 +86,8 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
             type="text"
             required
             placeholder="Jan Kowalski"
+            value={fields.name}
+            onChange={e => setFields(f => ({ ...f, name: e.target.value }))}
             className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
           />
         </div>
@@ -76,6 +97,8 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
             type="text"
             required
             placeholder="Kowalski & Spółka"
+            value={fields.company}
+            onChange={e => setFields(f => ({ ...f, company: e.target.value }))}
             className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
           />
         </div>
@@ -86,6 +109,8 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
         <input
           type="url"
           placeholder="https://twojastrona.pl"
+          value={fields.url}
+          onChange={e => setFields(f => ({ ...f, url: e.target.value }))}
           className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
         />
       </div>
@@ -97,6 +122,8 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
             type="email"
             required
             placeholder="jan@firma.pl"
+            value={fields.email}
+            onChange={e => setFields(f => ({ ...f, email: e.target.value }))}
             className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
           />
         </div>
@@ -106,6 +133,8 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
             type="tel"
             required
             placeholder="+48 600 000 000"
+            value={fields.phone}
+            onChange={e => setFields(f => ({ ...f, phone: e.target.value }))}
             className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors"
           />
         </div>
@@ -140,6 +169,8 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
         <div className="flex flex-col gap-1.5">
           <label className="text-xs text-[#b0ada5] font-medium">Czego potrzebujesz?</label>
           <select
+            value={fields.service}
+            onChange={e => setFields(f => ({ ...f, service: e.target.value }))}
             className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] text-sm focus:outline-none focus:border-accent/50 transition-colors appearance-none"
           >
             <option value="" className="bg-[#1a1917]">Wybierz usługę...</option>
@@ -156,6 +187,8 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
           <textarea
             rows={3}
             placeholder="Opowiedz nam o swoim projekcie..."
+            value={fields.message}
+            onChange={e => setFields(f => ({ ...f, message: e.target.value }))}
             className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] text-[#f8f7f4] placeholder-[#b0ada5]/50 text-sm focus:outline-none focus:border-accent/50 transition-colors resize-none"
           />
         </div>
@@ -163,10 +196,17 @@ export default function ContactForm({ variant = 'default', showCheckboxes = fals
 
       <button
         type="submit"
-        className="w-full py-3.5 rounded-xl bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-accent/20"
+        disabled={loading}
+        className="w-full py-3.5 rounded-xl bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-accent/20 disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {variant === 'audit' ? 'Wyślij — odezwiemy się w 24h' : 'Wyślij zapytanie'}
+        {loading ? 'Wysyłanie...' : variant === 'audit' ? 'Wyślij — odezwiemy się w 24h' : 'Wyślij zapytanie'}
       </button>
+
+      {error && (
+        <p className="text-xs text-red-400 text-center">
+          Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na kontakt@tapit.com.pl
+        </p>
+      )}
 
       <p className="flex items-center gap-2 text-xs text-success">
         <CheckCircle size={13} />

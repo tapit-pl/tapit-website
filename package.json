@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/nodemailer": "^8.0.0",
     "framer-motion": "^11.3.19",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.446.0",
     "next": "^14.2.35",
+    "nodemailer": "^8.0.7",
     "react": "^18",
     "react-dom": "^18"
   },
