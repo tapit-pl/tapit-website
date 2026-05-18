@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CheckCircle, ArrowRight, Repeat, CreditCard, Zap, Globe, Lock } from 'lucide-react'
+import { CheckCircle, ArrowRight, Repeat, CreditCard, Zap, Globe, Lock, Flame, HelpCircle } from 'lucide-react'
 import SectionTag from '@/components/SectionTag'
 
 const plans = [
@@ -9,15 +9,17 @@ const plans = [
     label: 'Subskrypcja',
     badge: null,
     tagline: 'Zacznij bez ryzyka',
+    pricePrefix: 'od',
     price: '75',
     unit: 'zł netto / mies.',
     highlight: false,
-    description: 'Nie płacisz ani złotówki za stworzenie strony. Testuj przez pierwszy miesiąc - jeśli nie jesteś zadowolony, po prostu kończysz.',
+    promoLabel: null,
+    description: 'Nie płacisz za stworzenie strony - my budujemy, Ty płacisz miesięcznie i działasz od pierwszego dnia.',
     features: [
       'Zero kosztów startu - strona za darmo',
-      'Działasz od pierwszego dnia',
-      'Możliwość rezygnacji w każdej chwili',
-      'Hosting i domena w Twoim zakresie',
+      'Hosting i domena w naszym zakresie',
+      'Strona działa od pierwszego dnia',
+      'Minimalne zobowiązanie: 3 miesiące',
     ],
     note: 'Strona pozostaje własnością Tapit. Przy rezygnacji z subskrypcji zostaje wyłączona.',
     cta: 'Zacznij subskrypcję',
@@ -29,18 +31,19 @@ const plans = [
     label: 'Raty',
     badge: 'Polecamy',
     tagline: 'Elastyczna płatność',
-    price: '250',
+    pricePrefix: 'od nawet',
+    price: '50',
     unit: 'zł netto / mies.',
     highlight: true,
-    description: 'Zamów stronę teraz i płać wygodnie w ratach. Strona staje się Twoja od razu po pełnej spłacie.',
+    promoLabel: 'Promocja majowa',
+    description: 'Zamów stronę teraz i rozłóż płatność na wygodne raty. Strona staje się Twoja po pełnej spłacie.',
     features: [
       'Strona Twoja po spłacie rat',
-      'Cena strony od 650 zł netto',
+      'Cena strony od 650 zł netto*',
       'Prowizja za raty: tylko 3%',
-      'Hosting i domena w Twoim zakresie',
+      'Pomagamy zakupić hosting i domenę',
     ],
-    note: null,
-    noteHosting: true,
+    note: '* Cena 650 zł netto to wyjątkowa promocja majowa dla nowych klientów.',
     cta: 'Rozłóż na raty',
     ctaHref: '/kontakt',
   },
@@ -50,26 +53,21 @@ const plans = [
     label: 'Jednorazowa',
     badge: null,
     tagline: 'Bez żadnych haczyków',
+    pricePrefix: 'od',
     price: '650',
     unit: 'zł netto',
     highlight: false,
-    description: 'Płacisz raz - strona Twoja na zawsze. Żadnych miesięcznych opłat, żadnych ukrytych kosztów.',
+    promoLabel: 'Wyjątkowa cena w maju',
+    description: 'Płacisz raz - strona Twoja na zawsze. Żadnych abonamentów, żadnych ukrytych kosztów.',
     features: [
-      'Pełna własność strony',
-      'Certyfikat SSL gratis',
-      'Bez abonamentów i zobowiązań',
-      'Hosting i domena w Twoim zakresie',
+      'Pełna własność strony od razu',
+      'Pomagamy zakupić hosting i domenę',
+      'Bez miesięcznych zobowiązań',
     ],
     note: null,
     cta: 'Zamów stronę',
     ctaHref: '/kontakt',
   },
-]
-
-const hostingExamples = [
-  { name: 'Hosting VPS (Hetzner)', cost: '~25 zł / mies.', year: '~300 zł / rok' },
-  { name: 'Hosting współdzielony (Zenbox)', cost: '~20 zł / mies.', year: '~240 zł / rok' },
-  { name: 'Domena .pl', cost: '~5 zł / mies.', year: '~60 zł / rok' },
 ]
 
 export default function WebsitePricing() {
@@ -96,7 +94,6 @@ export default function WebsitePricing() {
                     : 'bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] hover:border-accent/30 hover:-translate-y-1'
                 }`}
               >
-                {/* Top gradient bar */}
                 {plan.highlight && (
                   <div className="h-1 bg-gradient-to-r from-accent via-orange-400 to-accent" />
                 )}
@@ -121,10 +118,20 @@ export default function WebsitePricing() {
                     </div>
                   </div>
 
+                  {/* Promo label */}
+                  {plan.promoLabel && (
+                    <div className="flex items-center gap-1.5 mb-3">
+                      <Flame size={12} className="text-orange-400" />
+                      <span className="text-xs font-heading font-bold text-orange-400 uppercase tracking-wider">
+                        {plan.promoLabel}
+                      </span>
+                    </div>
+                  )}
+
                   {/* Price */}
                   <div className="mb-5 pb-5 border-b border-[rgba(255,255,255,0.07)]">
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-sm text-[#b0ada5]">od</span>
+                    <div className="flex items-baseline gap-1.5 flex-wrap">
+                      <span className="text-sm text-[#b0ada5]">{plan.pricePrefix}</span>
                       <span className="font-heading font-extrabold text-4xl text-[#f8f7f4]">{plan.price}</span>
                       <span className="text-sm text-[#b0ada5]">{plan.unit}</span>
                     </div>
@@ -144,7 +151,7 @@ export default function WebsitePricing() {
                     {plan.id === 'jednorazowa' && (
                       <li className="flex items-start gap-2.5">
                         <Lock size={14} className="text-accent shrink-0 mt-0.5" />
-                        <span className="text-sm text-accent font-medium">Certyfikat SSL w zestawie</span>
+                        <span className="text-sm text-accent font-semibold">Certyfikat SSL w zestawie</span>
                       </li>
                     )}
                   </ul>
@@ -174,43 +181,49 @@ export default function WebsitePricing() {
           })}
         </div>
 
-        {/* Hosting costs note */}
+        {/* Hosting costs box */}
         <div className="mt-10 p-6 rounded-2xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.07)]">
-          <div className="flex items-start gap-3 mb-4">
+          <div className="flex items-start gap-3 mb-5">
             <Globe size={16} className="text-[#b0ada5] shrink-0 mt-0.5" />
             <div>
               <p className="text-sm font-heading font-bold text-[#f8f7f4] mb-1">Ile kosztuje hosting i domena?</p>
               <p className="text-xs text-[#b0ada5] leading-relaxed">
-                Każda strona wymaga opłaconego hostingu i domeny - to Twój koszt, niezależny od modelu płatności za stronę. Poniżej orientacyjne stawki rynkowe:
+                Przy modelach ratalnym i jednorazowym hosting i domena leżą po Twojej stronie - opłacane raz w roku. Poniżej nasze stawki. <strong className="text-[#f8f7f4]">Pomagamy Ci je zakupić i skonfigurować.</strong>
               </p>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {hostingExamples.map((h, i) => (
-              <div key={i} className="flex items-center justify-between sm:flex-col sm:items-start gap-1 p-3 rounded-xl bg-[rgba(255,255,255,0.03)]">
-                <p className="text-xs text-[#b0ada5]">{h.name}</p>
-                <div className="text-right sm:text-left">
-                  <p className="text-sm font-heading font-bold text-[#f8f7f4]">{h.cost}</p>
-                  <p className="text-xs text-[#b0ada5]/60">{h.year}</p>
-                </div>
+            {[
+              { name: 'Hosting (serwer)', cost: '200 zł / rok', month: 'ok. 17 zł / mies.', detail: 'Opłacany raz rocznie' },
+              { name: 'Domena .pl', cost: '100 zł / rok', month: 'ok. 8 zł / mies.', detail: 'Opłacana raz rocznie' },
+              { name: 'Razem', cost: '300 zł / rok', month: 'ok. 25 zł / mies.', detail: 'Łączny koszt utrzymania', highlight: true },
+            ].map((h, i) => (
+              <div key={i} className={`p-4 rounded-xl ${(h as {highlight?: boolean}).highlight ? 'bg-accent/8 border border-accent/20' : 'bg-[rgba(255,255,255,0.03)]'}`}>
+                <p className="text-xs text-[#b0ada5] mb-1">{h.name}</p>
+                <p className={`text-lg font-heading font-bold ${(h as {highlight?: boolean}).highlight ? 'text-accent' : 'text-[#f8f7f4]'}`}>{h.cost}</p>
+                <p className="text-xs text-[#b0ada5]/70">{h.month}</p>
+                <p className="text-[10px] text-[#b0ada5]/50 mt-1">{h.detail}</p>
               </div>
             ))}
           </div>
-          <p className="text-xs text-[#b0ada5]/50 mt-3">
-            * Ceny orientacyjne na maj 2026. Mozemy pomoc w konfiguracji hostingu i domeny - zapytaj nas podczas audytu.
-          </p>
+          <div className="mt-4 flex items-start gap-2">
+            <HelpCircle size={13} className="text-[#b0ada5]/50 shrink-0 mt-0.5" />
+            <p className="text-xs text-[#b0ada5]/50 leading-relaxed">
+              Model subskrypcji zawiera hosting i domenę w cenie abonamentu - nie płacisz za nie osobno.
+            </p>
+          </div>
         </div>
 
         {/* Bottom CTA */}
         <div className="mt-10 text-center">
           <p className="text-[#b0ada5] text-sm mb-4">
-            Nie wiesz ktory model wybrać? Porozmawiajmy - doradzimy najlepsze rozwiązanie dla Twojej firmy.
+            Nie wiesz który model wybrać? Porozmawiajmy - doradzimy najlepsze rozwiązanie dla Twojej firmy.
           </p>
           <Link
             href="/audyt"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5"
           >
-            Zamow darmowy audyt
+            Zamów darmowy audyt
             <ArrowRight size={15} />
           </Link>
         </div>
