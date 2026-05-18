@@ -83,21 +83,45 @@ export default function ServicePage({
       {afterHero}
 
       {/* Problem */}
-      <section className="py-16 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(255,255,255,0.07)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl">
-            <SectionTag>Problem</SectionTag>
-            <h2 className="mb-8">Z czym się mierzysz?</h2>
-            <div className="space-y-4">
-              {problems.map((p, i) => (
-                <div key={i} className="flex items-start gap-3 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-xl p-5">
-                  <span className="w-6 h-6 rounded-full border border-accent/30 flex items-center justify-center text-accent text-xs font-heading font-bold shrink-0 mt-0.5">
-                    {i + 1}
-                  </span>
-                  <p className="text-[#b0ada5] text-sm leading-relaxed">{p}</p>
-                </div>
-              ))}
-            </div>
+      <section className="relative py-24 overflow-hidden bg-[#0f0e0d]">
+        {/* Background photo */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/hero-strony-internetowe.jpg')",
+            opacity: 0.35,
+          }}
+        />
+        {/* Gradient overlay */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, #0f0e0d 0%, rgba(15,14,13,0.6) 40%, rgba(15,14,13,0.6) 60%, #0f0e0d 100%)',
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <SectionTag className="justify-center" dark>Problem</SectionTag>
+            <h2 className="text-white mb-3">Z czym się mierzysz?</h2>
+            <p className="text-white/50 text-lg max-w-xl mx-auto">
+              Znamy te problemy - i wiemy jak je rozwiązać.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {problems.map((p, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-4 p-6 rounded-2xl border border-white/10 backdrop-blur-md"
+                style={{ background: 'rgba(255,255,255,0.06)' }}
+              >
+                <span className="w-7 h-7 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center text-accent text-xs font-heading font-bold shrink-0 mt-0.5">
+                  {i + 1}
+                </span>
+                <p className="text-white/70 text-sm leading-relaxed">{p}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
