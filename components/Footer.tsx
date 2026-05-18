@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Linkedin, Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import PhoneLink from '@/components/PhoneLink'
 
 const serviceLinks = [
   { label: 'Google Ads & PPC', href: '/uslugi/google-ads' },
@@ -124,14 +125,9 @@ export default function Footer() {
                   kontakt@tapit.com.pl
                 </a>
               </li>
-              <li>
-                <a
-                  href="tel:+48694843482"
-                  className="flex items-center gap-2.5 text-sm text-[#b0ada5] hover:text-accent transition-colors"
-                >
-                  <Phone size={15} className="shrink-0" />
-                  +48 694 843 482
-                </a>
+              <li className="flex items-center gap-2.5">
+                <Phone size={15} className="shrink-0 text-[#b0ada5]" />
+                <PhoneLink className="text-sm text-[#b0ada5] hover:text-accent transition-colors" />
               </li>
               <li className="flex items-start gap-2.5 text-sm text-[#b0ada5]">
                 <MapPin size={15} className="shrink-0 mt-0.5" />

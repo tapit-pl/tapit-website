@@ -7,7 +7,7 @@ export default function UrgentNotice() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const expired = new Date() > new Date('2026-05-26T23:59:59')
+    const expired = new Date() >= new Date('2026-05-28T00:00:00')
     const dismissed = sessionStorage.getItem('urgent-notice-dismissed')
     if (!expired && !dismissed) setVisible(true)
   }, [])

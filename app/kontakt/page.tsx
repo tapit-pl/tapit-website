@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import { Mail, Phone, Clock, MapPin } from 'lucide-react'
+import { Mail, Clock, MapPin } from 'lucide-react'
 import SectionTag from '@/components/SectionTag'
 import ContactForm from '@/components/ContactForm'
+import PhoneContactItem from '@/components/PhoneContactItem'
 
 export const metadata: Metadata = {
   title: 'Kontakt - Tapit',
@@ -45,17 +46,7 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              <a href="tel:+48694843482" className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                  <Phone size={18} className="text-accent" />
-                </div>
-                <div>
-                  <p className="text-xs text-[#b0ada5] uppercase tracking-wider mb-0.5">Telefon</p>
-                  <p className="text-[#f8f7f4] font-medium group-hover:text-accent transition-colors">
-                    +48 694 843 482
-                  </p>
-                </div>
-              </a>
+              <PhoneContactItem />
 
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+import PhoneLink from '@/components/PhoneLink'
 
 export default function FinalCTA() {
   const [submitted, setSubmitted] = useState(false)
@@ -64,9 +65,7 @@ export default function FinalCTA() {
             </form>
             <p className="mt-5 text-[#b0ada5] text-sm">
               Lub zadzwoń:{' '}
-              <a href="tel:+48694843482" className="text-accent hover:underline">
-                +48 694 843 482
-              </a>
+              <PhoneLink className="text-accent hover:underline" />
             </p>
           </>
         )}
