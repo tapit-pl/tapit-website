@@ -8,9 +8,9 @@ import { ChevronDown, Menu, X, ArrowRight } from 'lucide-react'
 const services = {
   'Reklama': [
     { name: 'Google Ads & PPC', desc: 'Kampanie w Google, Meta, TikTok i LinkedIn', href: '/uslugi/google-ads' },
-    { name: 'Meta Ads', desc: 'Reklamy na Facebooku i Instagramie', href: '/uslugi/google-ads' },
-    { name: 'TikTok Ads', desc: 'Kampanie dla młodszych odbiorców', href: '/uslugi/google-ads' },
-    { name: 'LinkedIn Ads', desc: 'Dotarcie do profesjonalistów B2B', href: '/uslugi/google-ads' },
+    { name: 'Meta Ads', desc: 'Reklamy na Facebooku i Instagramie', href: '/uslugi/meta-ads' },
+    { name: 'TikTok Ads', desc: 'Kampanie dla młodszych odbiorców', href: '/uslugi/tiktok-ads' },
+    { name: 'LinkedIn Ads', desc: 'Dotarcie do profesjonalistów B2B', href: '/uslugi/linkedin-ads' },
   ],
   'Widoczność': [
     { name: 'SEO', desc: 'Pozycjonowanie w wynikach organicznych', href: '/uslugi/seo' },
