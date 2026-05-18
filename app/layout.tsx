@@ -23,11 +23,11 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Tapit — Agencja marketingowa Kraków | Google Ads, SEO, Marketing lokalny',
+    default: 'Tapit — Agencja Marketingowa Kraków',
     template: '%s | Tapit',
   },
   description:
-    'Tapit to agencja marketingowa z Krakowa. Pomagamy firmom rosnąć przez Google Ads, SEO, marketing lokalny i pozycjonowanie w AI. Darmowy audyt marketingu.',
+    'Agencja marketingowa z Krakowa. Pomagamy lokalnym firmom zdobywać więcej klientów dzięki Google Ads, SEO i marketingowi lokalnemu. Sprawdź darmowy audyt.',
   keywords: [
     'agencja marketingowa Kraków',
     'Google Ads Kraków',
