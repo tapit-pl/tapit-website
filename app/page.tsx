@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/home/Hero'
+import WebsitePromoModal from '@/components/WebsitePromoModal'
 import TrustBar from '@/components/home/TrustBar'
 import Services from '@/components/home/Services'
 import CaseStudies from '@/components/home/CaseStudies'
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <WebsitePromoModal />
       <Hero />
       <TrustBar />
       <Services />
