@@ -63,6 +63,9 @@ export const metadata: Metadata = {
     title: 'Tapit - Agencja marketingowa Kraków',
     description: 'Więcej klientów, mniej przepalonego budżetu.',
   },
+  verification: {
+    google: 'V7UH_vip9vIbhcAmgUgxz7tTPm9NCzqUkJvsH5G8HHo',
+  },
   robots: {
     index: true,
     follow: true,
