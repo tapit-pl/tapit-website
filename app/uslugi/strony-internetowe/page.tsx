@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Monitor } from 'lucide-react'
 import ServicePage from '@/components/ServicePage'
 import WebsitePricing from '@/components/WebsitePricing'
+import WebsitePromoModal from '@/components/WebsitePromoModal'
 
 export const metadata: Metadata = {
   title: 'Strony internetowe - Tapit',
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 
 export default function WebsitesPage() {
   return (
+    <>
+    <WebsitePromoModal />
     <ServicePage
       tag="Usługi / Strony internetowe"
       title="Strony internetowe"
@@ -43,5 +46,6 @@ export default function WebsitesPage() {
       ]}
       extraSection={<WebsitePricing />}
     />
+    </>
   )
 }
