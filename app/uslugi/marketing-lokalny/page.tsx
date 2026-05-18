@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function LocalMarketingPage() {
   return (
     <ServicePage
-      heroImage="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80"
+      heroImage="/images/hero-marketing-lokalny.jpg"
       tag="Usługi / Marketing lokalny"
       title="Marketing lokalny"
       subtitle="Pozycjonowanie wizytówki Google i lokalne SEO, żeby klienci z Twojego miasta znajdowali Cię jako pierwszego. Idealne dla biznesów stacjonarnych, restauracji, klinik i salonów."

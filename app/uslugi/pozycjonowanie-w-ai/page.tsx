@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function AiPositioningPage() {
   return (
     <ServicePage
-      heroImage="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1600&q=80"
+      heroImage="/images/hero-ai.jpg"
       tag="Usługi / Pozycjonowanie w AI"
       title="Pozycjonowanie w AI"
       subtitle="Optymalizujemy Twoją obecność pod ChatGPT, Perplexity i inne wyszukiwarki AI. Nowy kanał dotarcia do klientów, który rośnie z miesiąca na miesiąc - i który większość firm nadal ignoruje."
