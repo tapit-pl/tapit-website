@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { CheckCircle, ArrowRight, Repeat, CreditCard, Zap, Globe, Lock, Flame, HelpCircle } from 'lucide-react'
 import SectionTag from '@/components/SectionTag'
 
+const MONTHS = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia']
+const currentMonth = MONTHS[new Date().getMonth()]
+
 const plans = [
   {
     id: 'subskrypcja',
@@ -35,7 +38,7 @@ const plans = [
     price: '50',
     unit: 'zł netto / mies.',
     highlight: true,
-    promoLabel: 'Promocja majowa',
+    promoLabel: `Promocja ${currentMonth}`,
     description: 'Zamów stronę teraz i rozłóż płatność na wygodne raty. Strona staje się Twoja po pełnej spłacie.',
     features: [
       'Strona Twoja po spłacie rat',
@@ -43,7 +46,7 @@ const plans = [
       'Prowizja za raty: tylko 3%',
       'Pomagamy zakupić hosting i domenę',
     ],
-    note: '* Cena 650 zł netto to wyjątkowa promocja majowa dla nowych klientów.',
+    note: `* Cena 650 zł netto to wyjątkowa promocja ${currentMonth} dla nowych klientów.`,
     cta: 'Rozłóż na raty',
     ctaHref: '/kontakt',
   },
@@ -57,7 +60,7 @@ const plans = [
     price: '650',
     unit: 'zł netto',
     highlight: false,
-    promoLabel: 'Wyjątkowa cena w maju',
+    promoLabel: `Wyjątkowa cena w ${currentMonth}`,
     description: 'Płacisz raz - strona Twoja na zawsze. Żadnych abonamentów, żadnych ukrytych kosztów.',
     features: [
       'Pełna własność strony od razu',

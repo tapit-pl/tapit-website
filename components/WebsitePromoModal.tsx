@@ -4,6 +4,10 @@ import { useEffect, useState } from 'react'
 import { X, Zap, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
+const MONTHS = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia']
+const currentMonth = MONTHS[new Date().getMonth()]
+const currentYear = new Date().getFullYear()
+
 export default function WebsitePromoModal() {
   const [open, setOpen] = useState(false)
 
@@ -45,7 +49,7 @@ export default function WebsitePromoModal() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/15 border border-accent/25 mb-5">
               <Zap size={12} className="text-accent" />
               <span className="text-accent text-xs font-heading font-bold uppercase tracking-widest">
-                Tylko w maju 2026
+                Tylko w {currentMonth} {currentYear}
               </span>
             </div>
 
@@ -55,7 +59,7 @@ export default function WebsitePromoModal() {
             </h2>
 
             <p className="text-[#b0ada5] text-sm leading-relaxed mb-6">
-              Wyjątkowa oferta majowa - tylko dla nowych klientów. Tworzymy profesjonalne, szybkie strony WWW z pełnym SEO. Dokładna wycena zostanie przedstawiona mailowo po krótkim omówieniu projektu.
+              Wyjątkowa oferta {currentMonth} - tylko dla nowych klientów. Tworzymy profesjonalne, szybkie strony WWW z pełnym SEO. Dokładna wycena zostanie przedstawiona mailowo po krótkim omówieniu projektu.
             </p>
 
             <div className="space-y-2 mb-7 p-4 rounded-2xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.07)]">
@@ -63,7 +67,7 @@ export default function WebsitePromoModal() {
                 'Cena od 650 zł netto - prosta, skuteczna strona',
                 'Możliwość płatności jednorazowej, ratalnej lub subskrypcji',
                 'Tylko dla nowych klientów Tapit',
-                'Oferta ważna do końca maja 2026',
+                `Oferta ważna do końca ${currentMonth} ${currentYear}`,
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-1.5" />
