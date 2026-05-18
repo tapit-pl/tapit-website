@@ -1,13 +1,19 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import { CheckCircle, ArrowRight, Repeat, CreditCard, Zap, Globe, Lock, Flame, HelpCircle } from 'lucide-react'
 import SectionTag from '@/components/SectionTag'
+import WebsiteOrderModal from '@/components/WebsiteOrderModal'
+
+type PlanType = 'subskrypcja' | 'raty' | 'jednorazowa'
 
 const MONTHS = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia']
 const currentMonth = MONTHS[new Date().getMonth()]
 
 const plans = [
   {
-    id: 'subskrypcja',
+    id: 'subskrypcja' as PlanType,
     icon: Repeat,
     label: 'Subskrypcja',
     badge: null,
@@ -26,10 +32,10 @@ const plans = [
     ],
     note: 'Strona pozostaje własnością Tapit. Przy rezygnacji z subskrypcji zostaje wyłączona.',
     cta: 'Zacznij subskrypcję',
-    ctaHref: '/kontakt',
+    usesModal: true,
   },
   {
-    id: 'raty',
+    id: 'raty' as PlanType,
     icon: CreditCard,
     label: 'Raty',
     badge: 'Polecamy',
@@ -48,10 +54,10 @@ const plans = [
     ],
     note: `* Cena 650 zł netto to wyjątkowa promocja ${currentMonth} dla nowych klientów.`,
     cta: 'Rozłóż na raty',
-    ctaHref: '/kontakt',
+    usesModal: true,
   },
   {
-    id: 'jednorazowa',
+    id: 'jednorazowa' as PlanType,
     icon: Zap,
     label: 'Jednorazowa',
     badge: null,
@@ -69,11 +75,13 @@ const plans = [
     ],
     note: null,
     cta: 'Zamów stronę',
-    ctaHref: '/kontakt',
+    usesModal: true,
   },
 ]
 
 export default function WebsitePricing() {
+  const [activeModal, setActiveModal] = useState<PlanType | null>(null)
+
   return (
     <section className="py-20 border-t border-[rgba(255,255,255,0.07)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -110,7 +118,6 @@ export default function WebsitePricing() {
                 )}
 
                 <div className="p-7 flex flex-col flex-1">
-                  {/* Icon + label */}
                   <div className="flex items-center gap-3 mb-5">
                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${plan.highlight ? 'bg-accent/20' : 'bg-[rgba(255,255,255,0.06)]'}`}>
                       <Icon size={18} className={plan.highlight ? 'text-accent' : 'text-[#b0ada5]'} />
@@ -121,7 +128,6 @@ export default function WebsitePricing() {
                     </div>
                   </div>
 
-                  {/* Promo label */}
                   {plan.promoLabel && (
                     <div className="flex items-center gap-1.5 mb-3">
                       <Flame size={12} className="text-orange-400" />
@@ -131,7 +137,6 @@ export default function WebsitePricing() {
                     </div>
                   )}
 
-                  {/* Price */}
                   <div className="mb-5 pb-5 border-b border-[rgba(255,255,255,0.07)]">
                     <div className="flex items-baseline gap-1.5 flex-wrap">
                       <span className="text-sm text-[#b0ada5]">{plan.pricePrefix}</span>
@@ -140,10 +145,8 @@ export default function WebsitePricing() {
                     </div>
                   </div>
 
-                  {/* Description */}
                   <p className="text-[#b0ada5] text-sm leading-relaxed mb-5">{plan.description}</p>
 
-                  {/* Features */}
                   <ul className="space-y-2.5 mb-6 flex-1">
                     {plan.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-2.5">
@@ -159,16 +162,14 @@ export default function WebsitePricing() {
                     )}
                   </ul>
 
-                  {/* Note */}
                   {plan.note && (
                     <p className="text-xs text-[#b0ada5]/60 mb-5 p-3 rounded-xl bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)] leading-relaxed">
                       {plan.note}
                     </p>
                   )}
 
-                  {/* CTA */}
-                  <Link
-                    href={plan.ctaHref}
+                  <button
+                    onClick={() => setActiveModal(plan.id)}
                     className={`flex items-center justify-center gap-2 py-3.5 rounded-full font-heading font-bold text-sm transition-all ${
                       plan.highlight
                         ? 'bg-accent hover:bg-accent-hover text-white hover:shadow-lg hover:shadow-accent/25'
@@ -177,7 +178,7 @@ export default function WebsitePricing() {
                   >
                     {plan.cta}
                     <ArrowRight size={14} />
-                  </Link>
+                  </button>
                 </div>
               </div>
             )
@@ -197,13 +198,13 @@ export default function WebsitePricing() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
-              { name: 'Hosting (serwer)', cost: '200 zł / rok', month: 'ok. 17 zł / mies.', detail: 'Opłacany raz rocznie' },
-              { name: 'Domena .pl', cost: '100 zł / rok', month: 'ok. 8 zł / mies.', detail: 'Opłacana raz rocznie' },
+              { name: 'Hosting (serwer)', cost: '200 zł / rok', month: 'ok. 17 zł / mies.', detail: 'Opłacany raz rocznie', highlight: false },
+              { name: 'Domena .pl', cost: '100 zł / rok', month: 'ok. 8 zł / mies.', detail: 'Opłacana raz rocznie', highlight: false },
               { name: 'Razem', cost: '300 zł / rok', month: 'ok. 25 zł / mies.', detail: 'Łączny koszt utrzymania', highlight: true },
             ].map((h, i) => (
-              <div key={i} className={`p-4 rounded-xl ${(h as {highlight?: boolean}).highlight ? 'bg-accent/8 border border-accent/20' : 'bg-[rgba(255,255,255,0.03)]'}`}>
+              <div key={i} className={`p-4 rounded-xl ${h.highlight ? 'bg-[rgba(245,60,60,0.06)] border border-accent/20' : 'bg-[rgba(255,255,255,0.03)]'}`}>
                 <p className="text-xs text-[#b0ada5] mb-1">{h.name}</p>
-                <p className={`text-lg font-heading font-bold ${(h as {highlight?: boolean}).highlight ? 'text-accent' : 'text-[#f8f7f4]'}`}>{h.cost}</p>
+                <p className={`text-lg font-heading font-bold ${h.highlight ? 'text-accent' : 'text-[#f8f7f4]'}`}>{h.cost}</p>
                 <p className="text-xs text-[#b0ada5]/70">{h.month}</p>
                 <p className="text-[10px] text-[#b0ada5]/50 mt-1">{h.detail}</p>
               </div>
@@ -231,6 +232,13 @@ export default function WebsitePricing() {
           </Link>
         </div>
       </div>
+
+      {activeModal && (
+        <WebsiteOrderModal
+          plan={activeModal}
+          onClose={() => setActiveModal(null)}
+        />
+      )}
     </section>
   )
 }

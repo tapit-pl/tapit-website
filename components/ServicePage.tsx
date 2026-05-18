@@ -26,40 +26,61 @@ interface ServicePageProps {
   results: Result[]
   Icon: LucideIcon
   extraSection?: React.ReactNode
+  afterHero?: React.ReactNode
+  heroImage?: string
+  ctaLabel?: string
+  ctaHref?: string
 }
 
 export default function ServicePage({
-  tag, title, subtitle, problems, solutionTitle, solutionText, solutionPoints, steps, results, Icon, extraSection
+  tag, title, subtitle, problems, solutionTitle, solutionText, solutionPoints, steps, results, Icon, extraSection, afterHero,
+  heroImage, ctaLabel = 'Zamów darmowy audyt', ctaHref = '/audyt'
 }: ServicePageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="pt-20 pb-16 md:pt-28 relative overflow-hidden">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06]"
-          style={{ background: 'radial-gradient(circle, #f53c3c 0%, transparent 70%)', transform: 'translate(30%, -30%)' }}
-        />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl">
-            <SectionTag>{tag}</SectionTag>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
-                <Icon size={26} className="text-accent" />
-              </div>
-              <h1>{title}</h1>
+      <section
+        className="relative min-h-[70vh] flex items-center overflow-hidden"
+        style={heroImage ? {
+          backgroundImage: `url('${heroImage}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        } : {}}
+      >
+        {/* Overlays */}
+        {heroImage ? (
+          <>
+            <div className="absolute inset-0 bg-[#0f0e0d]/75" />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(15,14,13,0.95) 0%, rgba(15,14,13,0.6) 60%, rgba(15,14,13,0.2) 100%)' }} />
+          </>
+        ) : (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06]"
+            style={{ background: 'radial-gradient(circle, #f53c3c 0%, transparent 70%)', transform: 'translate(30%, -30%)' }}
+          />
+        )}
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-32">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/15 border border-accent/25 mb-6">
+              <Icon size={13} className="text-accent" />
+              <span className="text-accent text-xs font-heading font-bold uppercase tracking-widest">{tag}</span>
             </div>
-            <p className="text-[#b0ada5] text-lg md:text-xl leading-relaxed mb-8">{subtitle}</p>
+            <h1 className="text-[#f8f7f4] mb-6" style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', lineHeight: 1.1 }}>{title}</h1>
+            <p className="text-[#b0ada5] text-lg md:text-xl leading-relaxed mb-10 max-w-xl">{subtitle}</p>
             <Link
-              href="/audyt"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all hover:shadow-xl hover:shadow-accent/25 hover:-translate-y-0.5"
+              href={ctaHref}
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-accent hover:bg-accent-hover text-white font-heading font-bold text-sm transition-all hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-0.5"
             >
-              Zamów darmowy audyt
+              {ctaLabel}
               <ArrowRight size={15} />
             </Link>
           </div>
         </div>
       </section>
+
+      {afterHero}
 
       {/* Problem */}
       <section className="py-16 bg-[rgba(0,0,0,0.02)] border-y border-[rgba(255,255,255,0.07)]">

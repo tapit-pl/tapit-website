@@ -30,9 +30,9 @@ export default function CookieBanner() {
     <>
       {/* Main banner */}
       {!showSettings && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-white border-t border-[rgba(255,255,255,0.08)] shadow-2xl animate-fade-in">
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-[#1a1917] border-t border-[rgba(255,255,255,0.08)] shadow-2xl animate-fade-in">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-4">
-            <p className="text-[#b0ada5] text-sm flex-1">
+            <p className="text-[#b0ada5] text-sm flex-1 leading-relaxed">
               Używamy plików cookies, żeby lepiej rozumieć, jak korzystasz z naszej strony i doskonalić nasze usługi.
             </p>
             <div className="flex items-center gap-3 shrink-0">

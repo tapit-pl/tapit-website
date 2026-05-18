@@ -41,7 +41,8 @@ export default function WebsitesPage() {
         { metric: '+185%', label: 'wzrost konwersji', desc: 'Wzrost liczby zapytań po przeprojektowaniu strony klienta z branży usług profesjonalnych.' },
         { metric: '96/100', label: 'PageSpeed Mobile', desc: 'Średni wynik PageSpeed Insights na mobile dla stron zbudowanych przez Tapit.' },
       ]}
-      extraSection={<WebsitePricing />}
+      heroImage="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1600&q=80"
+      afterHero={<WebsitePricing />}
     />
   )
 }

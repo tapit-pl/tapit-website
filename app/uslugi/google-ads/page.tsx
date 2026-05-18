@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function GoogleAdsPage() {
   return (
     <ServicePage
+      heroImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80"
       tag="Usługi / Google Ads"
       title="Google Ads & PPC"
       subtitle="Precyzyjne kampanie reklamowe w Google, Meta, TikTok i LinkedIn, które docierają do Twoich klientów dokładnie wtedy, gdy szukają Twoich usług. Płacisz tylko za realne kliknięcia."

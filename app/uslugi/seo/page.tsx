@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function SeoPage() {
   return (
     <ServicePage
+      heroImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80"
       tag="Usługi / SEO"
       title="Pozycjonowanie SEO"
       subtitle="Budujemy widoczność Twojej strony w wynikach organicznych Google. Długofalowa strategia, która przynosi stały ruch bez ciągłego płacenia za każde kliknięcie."

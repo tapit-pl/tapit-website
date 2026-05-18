@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function AnalyticsPage() {
   return (
     <ServicePage
+      heroImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80"
       tag="Usługi / Analityka"
       title="Analityka i Consent Mode"
       subtitle="Wdrażamy Google Analytics 4, Google Tag Manager i Consent Mode v2, żebyś podejmował decyzje na danych, nie na przeczuciach. I żebyś był zgodny z wymaganiami Google i RODO."
