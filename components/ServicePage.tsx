@@ -25,10 +25,11 @@ interface ServicePageProps {
   steps: Step[]
   results: Result[]
   Icon: LucideIcon
+  extraSection?: React.ReactNode
 }
 
 export default function ServicePage({
-  tag, title, subtitle, problems, solutionTitle, solutionText, solutionPoints, steps, results, Icon
+  tag, title, subtitle, problems, solutionTitle, solutionText, solutionPoints, steps, results, Icon, extraSection
 }: ServicePageProps) {
   return (
     <>
@@ -143,6 +144,8 @@ export default function ServicePage({
           <ArrowRight size={16} />
         </Link>
       </section>
+
+      {extraSection}
 
       <FinalCTA />
     </>

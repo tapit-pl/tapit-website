@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Monitor } from 'lucide-react'
 import ServicePage from '@/components/ServicePage'
+import WebsitePricing from '@/components/WebsitePricing'
 
 export const metadata: Metadata = {
   title: 'Strony internetowe - Tapit',
@@ -40,6 +41,7 @@ export default function WebsitesPage() {
         { metric: '+185%', label: 'wzrost konwersji', desc: 'Wzrost liczby zapytań po przeprojektowaniu strony klienta z branży usług profesjonalnych.' },
         { metric: '96/100', label: 'PageSpeed Mobile', desc: 'Średni wynik PageSpeed Insights na mobile dla stron zbudowanych przez Tapit.' },
       ]}
+      extraSection={<WebsitePricing />}
     />
   )
 }
