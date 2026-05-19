@@ -8,8 +8,11 @@ import WebsiteOrderModal from '@/components/WebsiteOrderModal'
 
 type PlanType = 'subskrypcja' | 'raty' | 'jednorazowa'
 
-const MONTHS = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia']
-const currentMonth = MONTHS[new Date().getMonth()]
+const MONTHS_LOC = ['styczniu', 'lutym', 'marcu', 'kwietniu', 'maju', 'czerwcu', 'lipcu', 'sierpniu', 'wrześniu', 'październiku', 'listopadzie', 'grudniu']
+const MONTHS_ADJ = ['styczniowa', 'lutowa', 'marcowa', 'kwietniowa', 'majowa', 'czerwcowa', 'lipcowa', 'sierpniowa', 'wrześniowa', 'październikowa', 'listopadowa', 'grudniowa']
+const m = new Date().getMonth()
+const monthLoc = MONTHS_LOC[m]
+const monthAdj = MONTHS_ADJ[m]
 
 const plans = [
   {
@@ -44,7 +47,7 @@ const plans = [
     price: '50',
     unit: 'zł netto / mies.',
     highlight: true,
-    promoLabel: `Promocja ${currentMonth}`,
+    promoLabel: `Promocja ${monthAdj}`,
     description: 'Zamów stronę teraz i rozłóż płatność na wygodne raty. Strona staje się Twoja po pełnej spłacie.',
     features: [
       'Strona Twoja po spłacie rat',
@@ -52,7 +55,7 @@ const plans = [
       'Prowizja za raty: tylko 3%',
       'Pomagamy zakupić hosting i domenę',
     ],
-    note: `* Cena 650 zł netto to wyjątkowa promocja ${currentMonth} dla nowych klientów.`,
+    note: `* Cena 650 zł netto to wyjątkowa promocja ${monthAdj} dla nowych klientów.`,
     cta: 'Rozłóż na raty',
     usesModal: true,
   },
@@ -66,7 +69,7 @@ const plans = [
     price: '650',
     unit: 'zł netto',
     highlight: false,
-    promoLabel: `Wyjątkowa cena w ${currentMonth}`,
+    promoLabel: `Wyjątkowa cena w ${monthLoc}`,
     description: 'Płacisz raz - strona Twoja na zawsze. Żadnych abonamentów, żadnych ukrytych kosztów.',
     features: [
       'Pełna własność strony od razu',
