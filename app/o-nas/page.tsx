@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Eye, Handshake, TrendingUp } from 'lucide-react'
 import SectionTag from '@/components/SectionTag'
 import FinalCTA from '@/components/home/FinalCTA'
@@ -69,10 +70,22 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Photo placeholder */}
+            {/* Photo */}
             <div className="relative">
-              <div className="w-full aspect-[4/5] rounded-2xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] flex items-center justify-center">
-                <p className="text-[#b0ada5] text-sm">[Zdjęcie Macieja Sieńko]</p>
+              <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden">
+                <Image
+                  src="/maciej.jpg"
+                  alt="Maciej Sieńko — założyciel Tapit"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
+                  style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.55), transparent)' }}
+                />
               </div>
               {/* Accent decoration */}
               <div
